@@ -1,6 +1,20 @@
 
 (function() {
 
+  // Do we have the features we need?
+  if (!window.auth0         ||
+      !window.auth0.WebAuth ||
+      !document.body.classList        ||
+      !document.body.classList.remove ||
+      !document.body.querySelector ||
+      !document.body.addEventListener ||
+      !window.encodeURIComponent ||
+      !window.setTimeout ||
+      !window.console ||
+      !window.console.log ||
+      !window.console.error
+      ) return;
+
   var updateProgress
   var scrollToElement
   var zipShowing = false;
@@ -22,13 +36,34 @@
       // e.preventDefault()
       // updateProgress()
       // console.log('updateProgress done')
-      scrollToElement('finish')
-      if (!usingMouse) {
-        setTimeout(function() {
-          document.querySelector('button[name="sign_in_by').focus()
-        }, 1000)
-      }
+      // scrollToElement('finish')
+      // if (!usingMouse) {
+      //   setTimeout(function() {
+      //     document.querySelector('button[name="sign_in_by').focus()
+      //   }, 1000)
+      // }
       // console.log('scrollTo finish done')
+
+      
+      if (phoneShowing) {
+        scrollToElement('sign-in-phone')
+        setTimeout(function() {
+          document.querySelector('input[name="telephone"]').focus()
+        }, 1000)
+      } else if (emailShowing) {
+        scrollToElement('sign-in-email')
+        setTimeout(function() {
+          document.querySelector('input[name="email"]').focus()
+        }, 1000)
+      } else {
+        scrollToElement('finish')
+        if (!usingMouse) {
+          setTimeout(function() {
+            document.querySelector('button[name="sign_in_by').focus()
+          }, 1000)
+        }
+      }
+
     })
   }
 
@@ -176,11 +211,6 @@
         form.submit();
       }
 
-      // Hide the input and show a "Check your email for your login link!" screen
-      //$('.enter-email').hide();
-      //$('.check-email').show();
-
-
     });
   }
 
@@ -306,11 +336,10 @@
 
       function __scrollTo(elementID) {
         console.log('__scrollTo: ' + elementID)
-        // if (counter >= 5) {
-        //   document.getElementById('finish').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // } else {
-          document.getElementById(elementID).scrollIntoView({ behavior: 'smooth', block: 'start' });
-        //}
+        var element = document.getElementById(elementID)
+        if (element && element.scrollIntoView) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
 
       function updateAndScroll(name) {
@@ -476,25 +505,20 @@
   document.querySelector('#zip button').classList.remove('hidden')
 
   document.querySelector('a[href="#questions"]').addEventListener('click', function(e) {
-    document.getElementById('questions').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    setTimeout(function() {
-      document.querySelector('input[name="learn"]').focus()
-    }, 1000)
+    scrollToElement('questions')
+    if (!usingMouse) {
+      setTimeout(function() {
+        document.querySelector('input[name="learn"]').focus()
+      }, 1000)
+    }
     e.preventDefault();
   })
-
-  // document.querySelector('.progress button').addEventListener('click', function(e) {
-  //   console.log('progress button click')
-  //   document.getElementById('zip').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  //   e.preventDefault();
-  //   document.querySelector('input[name="zip"]').focus();
-  // })
 
   var signInPhone = document.getElementById('sign-in-phone');
   signInPhone.classList.add('hidden');
   document.querySelector('button[value="phone"]').addEventListener('click', function(e) {
     signInPhone.classList.remove('hidden')
-    signInPhone.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    scrollToElement('sign-in-phone')
     setTimeout(function() {
       document.querySelector('input[name="telephone"]').focus()
     }, 1000)

@@ -813,7 +813,8 @@
 
 
   #questions p {
-    background: rgb(237, 59, 136); /* @strawberry */
+    background: black;
+    background: var(--primary-color, black);
     color: white;
     padding: 3em 1.5em;
     margin: 0 -1.5em 3em
