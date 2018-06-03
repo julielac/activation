@@ -18,19 +18,17 @@
 
   <a href="{{ project.uri }}" target="_blank">
     <img src="/assets/images/{{ project.category }}/2048-wide/{{ project.project_image }}" width="250" /><br />
-    <span class="text">
-      <span class="text-inner">
-        <strong>{{ project.organization_name }}</strong>
-        <br />
-        {{ project.title }}
-      </span>
-    </span>
+    <div class="text">
+      <div class="text-inner">
+        <h3>{{ project.organization_name }}</h3>
+        <p>{{ project.title }}</p>
+      </div>
+    </div>
     <span class="mask"></span>
   </a>
 
   <label>
     <input type="radio" name="{{ category }}" value="{{ project.organization_name }}" />
-    <span class="text"><strong>{{ project.organization_name }}</strong><br />{{ project.title }}</span>
 
     <span class="mask"></span>
     <span class="pseudo-checkbox">

@@ -466,9 +466,21 @@
     font-weight: inherit;
     display: block;
   }
-  form > ul > li a:hover  strong,
-  form > ul > li a:active strong,
-  form > ul > li a:focus  strong {
+  form > ul > li .text p {
+    margin: 0;
+    /*font-weight: 600;*/
+    /*font-size: 0.875em;*/
+    line-height: 1.3125;
+  }
+  form > ul > li .text h3 {
+    margin-top: 0;
+    margin-bottom: 0.375em;
+    font-size: inherit;
+    line-height: 1.3125;
+  }
+  form > ul > li a:hover  p,
+  form > ul > li a:active p,
+  form > ul > li a:focus  p {
     text-decoration: underline;
   }
   form > ul > li a:focus {
@@ -489,7 +501,7 @@
   }
   form > ul > li .text {
     display: block;
-    padding: 1.5em;
+    padding: 1.5em 1.5em 2.25em;
   }
   form > ul > li img {
     display: block;
