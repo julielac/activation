@@ -296,21 +296,33 @@
     opacity: 0.25;
   }*/
   form > ul > li input:checked ~ .mask {
-    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
-  form .blueberry .mask {
+  form > ul > li a .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  form .blueberry label .mask {
     background: rgba(6, 179, 188, 0.5); /* @blueberry */
   }
-  form .banana .mask {
+  form .banana label .mask {
     background: rgba(255, 194, 51, 0.5); /* @banana */
   }
-  form .strawberry .mask {
+  form .strawberry label .mask {
     background: rgba(237, 59, 136, 0.5); /* @strawberry */
   }
-  form .tangerine .mask {
+  form .tangerine label .mask {
     background: rgba(249, 160, 51, 0.5); /* @tangerine */
   }
-  form .lime .mask {
+  form .lime label .mask {
     background: rgba(141, 208, 59, 0.5); /* @lime */
   }
   form > ul > li .call-to-action svg,

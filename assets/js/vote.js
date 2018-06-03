@@ -318,37 +318,47 @@
           case 'learn':
             updateProgress()
             scrollToElement('create')
-            setTimeout(function() {
-              document.querySelector('input[name="create"]').focus()
-            }, 1000)
+            if (!usingMouse) {
+              setTimeout(function() {
+                document.querySelector('input[name="create"]').focus()
+              }, 1000)
+            }
             break;
           case 'create':
             updateProgress()
             scrollToElement('play')
-            setTimeout(function() {
-              document.querySelector('input[name="play"]').focus()
-            }, 1000)
+            if (!usingMouse) {
+              setTimeout(function() {
+                document.querySelector('input[name="play"]').focus()
+              }, 1000)
+            }
             break;
           case 'play':
             updateProgress()
             scrollToElement('connect')
-            setTimeout(function() {
-              document.querySelector('input[name="connect"]').focus()
-            }, 1000)
+            if (!usingMouse) {
+              setTimeout(function() {
+                document.querySelector('input[name="connect"]').focus()
+              }, 1000)
+            }
             break;
           case 'connect':
             updateProgress()
             scrollToElement('live')
-            setTimeout(function() {
-              document.querySelector('input[name="live"]').focus()
-            }, 1000)
+            if (!usingMouse) {
+              setTimeout(function() {
+                document.querySelector('input[name="live"]').focus()
+              }, 1000)
+            }
             break;
           case 'live':
             updateProgress()
             scrollToElement('zip')
-            setTimeout(function() {
-              document.querySelector('input[name="zip"]').focus()
-            }, 1000)
+            if (!usingMouse) {
+              setTimeout(function() {
+                document.querySelector('input[name="zip"]').focus()
+              }, 1000)
+            }
             zipSeen = true
             break;
           default:
