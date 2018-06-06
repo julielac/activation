@@ -8,7 +8,7 @@ project_description: >-
 organization_name: Investing in Place
 organization_description: Non-profit organization
 project_video: 'https://www.youtube.com/watch?v=p_hZaJvzgqE'
-link_newsletter: 'http://eepurl.com/bOWmdr'
+link_newsletter: 'http://bit.ly/VoteIiP'
 organization_website: www.investinginplace.org
 organization_twitter: '@investinplace'
 organization_facebook: 'https://www.facebook.com/investinginplace/'

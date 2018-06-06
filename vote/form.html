@@ -88,13 +88,35 @@ stylesheets:
         <p class="field-button">
           <label>
             <span class="label-text">ZIP Code</span>
-            <input type="text" name="zip" pattern="[0-9]*" inputmode="number" placeholder="" />
+            <input type="text" name="zip" pattern="[0-9]*" inputmode="number" />
           </label>
           <button type="submit" class="hidden">Next</button>
         </p>
         <p><small>LA2050 uses ZIP Codes to determine how much of Los Angeles we’re reaching.</small></p>
       </div>
     </section>
+
+    <!--
+    <section id="subscribe" class="tangerine">
+      <div>
+        <h2>Join the movement!</h2>
+        <p style="max-width: 42em">Sign up for the LA2050 newsletter and twice a month, you'll receive updates on awesome orgs in LA, activations, opportunities, and jobs that are shaping the future of our region.</p>
+        <p class="field-button" style="max-width: 20em; margin-left: auto; margin-right: auto;">
+          <label>
+            <span class="label-text">Email address</span>
+            <input type="email" name="subscribe_email" placeholder="example@mail.com" />
+          </label>
+          <button type="submit" class="hidden">Next</button>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="subscribe_agree" value="1" checked="checked" style="font-size: inherit;" />
+            Subscribe me to the mailing list
+          </label>
+        </p>
+      </div>
+    </section>
+    -->
 
     <section id="finish" class="blueberry">
       <div>
@@ -131,7 +153,7 @@ stylesheets:
     </section>
 
     <section id="sign-in-email" class="lime">
-      <div>
+      <div style="max-width: 40em">
         <h2>Sign in with email</h2>
         <p>Next, we’ll send a message to your email address, with instructions.</p>
         <p class="field-button banana">
@@ -141,7 +163,13 @@ stylesheets:
           </label>
           <button type="submit">Send email</button>
         </p>
-        <p><small>We will only use this email address to complete the voting process. (No spam, we promise!)</small></p>
+        <p style="text-align: left;margin-bottom: 0;">
+          <label>
+            <input type="checkbox" name="subscribe_email_list" value="1" checked="checked" style="font-size: inherit;">
+            Subscribe me to the mailing list
+          </label>
+        </p>
+        <p style="line-height: 1.1;text-align: left;margin-left: 1.25em;margin-top: 0;"><small>We'd love to keep in touch, but we don't want to end up in your spam folder. Keep this box checked to sign up for the LA2050 newsletter and twice a month, you'll receive updates on awesome orgs in LA, events, and jobs that are shaping the future of our region. Join the movement!</small></p>
       </div>
     </section>
 

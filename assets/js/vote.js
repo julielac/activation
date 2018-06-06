@@ -12,7 +12,8 @@
       !window.setTimeout ||
       !window.console ||
       !window.console.log ||
-      !window.console.error
+      !window.console.error ||
+      !window.console.dir
       ) return;
 
   var updateProgress

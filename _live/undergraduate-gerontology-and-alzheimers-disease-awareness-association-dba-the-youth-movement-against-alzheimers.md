@@ -6,8 +6,7 @@ project_description: >-
   program that partners trained college student volunteers and persons with
   early-stage dementia in a community-based setting.
 organization_name: >-
-  Undergraduate Gerontology and Alzheimer’s Disease Awareness Association (DBA
-  The Youth Movement Against Alzheimer’s)
+  The Youth Movement Against Alzheimer's
 organization_description: Non-profit organization
 project_video: 'https://youtu.be/5fwflSIChBM'
 link_newsletter: 'http://bit.ly/ymaaNewsletter'

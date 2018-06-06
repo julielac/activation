@@ -1,16 +1,16 @@
 ---
 application_id: '4040590845'
 title: >-
-  ActivateLA will mobilize Angelenos to volunteer and create long-lasting
+  VolunteerLA will mobilize Angelenos to volunteer and create long-lasting
   change.
 project_description: >-
   With the leadership of LA's Mayor and building upon a recent increase in local
-  activism, ActivateLA will turn energy into action by connecting Angelenos to
+  activism, VolunteerLA will turn energy into action by connecting Angelenos to
   volunteer opportunities that create change.
 organization_name: Mayor’s Fund for Los Angeles
 organization_description: Non-profit organization
 project_video: ''
-link_newsletter: lamayor.org/activateLA
+link_newsletter: lamayor.org/volunteerLA
 organization_website:
   - 'https://mayorsfundla.org/'
   - 'https://www.lamayor.org/'
@@ -22,17 +22,17 @@ organization_facebook:
   - 'https://www.facebook.com/MayorOfLA/'
 organization_instagram: 'https://www.instagram.com/mayorofla/'
 link_donate: 'https://mayorsfundla.org/donate-now/'
-link_volunteer: lamayor.org/activateLA
+link_volunteer: lamayor.org/volunteerLA
 organization_activity: >-
   The Mayor’s Fund for Los Angeles brings together the best of private,
   philanthropic, non-profit and government resources to take on the city’s most
   pressing challenges.
 project_proposal_description: >-
-  ActivateLA will connect Angelenos to volunteer opportunities available in
+  VolunteerLA will connect Angelenos to volunteer opportunities available in
   communities across the region through an online platform powered by a mobile
-  volunteer app. Using the Mayor’s influence, ActivateLA will inspire Angelenos
+  volunteer app. Using the Mayor’s influence, VolunteerLA will inspire Angelenos
   who are hungry for ways to take action to get more civically engaged. By
-  providing a curated list of quality opportunities, ActivateLA aims to make
+  providing a curated list of quality opportunities, VolunteerLA aims to make
   volunteering easy and to ensure that a meaningful experience will lead to
   ongoing volunteering and deeper engagement.
 project_areas:
@@ -58,7 +58,7 @@ project_proposal_best_place: >-
    
    
    
-   In May, MOVE will launch the ActivateLA platform, an online resource that includes a curated list of volunteer opportunities in order to easily connect Angelenos to opportunities that are available in local communities across the region and that build on a diverse collection of skills. The volunteer opportunities featured on the site will represent the best of Los Angeles with MOVE’s vetted nonprofit partners posting opportunities as they become available. The platform will be powered by Golden, the leading volunteer mobile app. The Golden app features technical capabilities that will allow MOVE to capture valuable data to best inform how to grow volunteerism in the city and the region. Golden aims to solve one key challenge of volunteering — recruiting and converting volunteers — by making signing up easy and fun with clear, engaging descriptions and real-time logistics (like automated sign-in). In addition, Golden includes a backend dashboard that tracks key metrics and analytics, including economic value of volunteer time logged, percentage of new versus returning volunteers, interests and search terms, and a zip code heat map. 
+   In May, MOVE will launch the VolunteerLA platform, an online resource that includes a curated list of volunteer opportunities in order to easily connect Angelenos to opportunities that are available in local communities across the region and that build on a diverse collection of skills. The volunteer opportunities featured on the site will represent the best of Los Angeles with MOVE’s vetted nonprofit partners posting opportunities as they become available. The platform will be powered by Golden, the leading volunteer mobile app. The Golden app features technical capabilities that will allow MOVE to capture valuable data to best inform how to grow volunteerism in the city and the region. Golden aims to solve one key challenge of volunteering — recruiting and converting volunteers — by making signing up easy and fun with clear, engaging descriptions and real-time logistics (like automated sign-in). In addition, Golden includes a backend dashboard that tracks key metrics and analytics, including economic value of volunteer time logged, percentage of new versus returning volunteers, interests and search terms, and a zip code heat map. 
    
    
    
@@ -66,28 +66,28 @@ project_proposal_best_place: >-
    
    
    
-   MOVE has also convened a Nonprofit Council and Corporate Council of leading nonprofit organizations and companies from across the city to come together to support ActivateLA. These groups serve as key advisors and give input on how MOVE can best support corporate programs and the needs of nonprofits in the region. Going forward, the Nonprofit Council and Corporate Council will partner with MOVE to launch other programs to strengthen the city’s culture of volunteerism.
+   MOVE has also convened a Nonprofit Council and Corporate Council of leading nonprofit organizations and companies from across the city to come together to support VolunteerLA. These groups serve as key advisors and give input on how MOVE can best support corporate programs and the needs of nonprofits in the region. Going forward, the Nonprofit Council and Corporate Council will partner with MOVE to launch other programs to strengthen the city’s culture of volunteerism.
    
    
    
-   Through ActivateLA, we can establish Los Angeles as the national example of how government, nonprofits, foundations, and companies can partner to productively address our local issues together.
+   Through VolunteerLA, we can establish Los Angeles as the national example of how government, nonprofits, foundations, and companies can partner to productively address our local issues together.
 project_proposal_engage: >-
-  ActivateLA will tell the story of what’s unique about LA — highlighting the
+  VolunteerLA will tell the story of what’s unique about LA — highlighting the
   organizations that benefit and contribute to the fabric of the city. Our
   partners represent the best of the nonprofit sector and provide opportunities
-  across a diverse range of issue areas and communities. ActivateLA will appeal
+  across a diverse range of issue areas and communities. VolunteerLA will appeal
   to all Angelenos, aged 5 to 95. The platform and accompanying campaign will be
   optimistic and engaging, with compelling imagery and big calls to action.
    
    
    
-   Our Corporate Council, which will be key partner in raising awareness about ActivateLA, is made of up leaders from a diverse range of industries. 
+   Our Corporate Council, which will be key partner in raising awareness about VolunteerLA, is made of up leaders from a diverse range of industries. 
    
    
    
-   In addition to the Nonprofit and Corporate Councils, we will leverage additional partners and networks to engage Angelenos in ActivateLA including the Department of Neighborhood Empowerment, the Mayor’s field representatives, city departments like Recreation and Parks and the Central Library, the Mayor’s Youth Council, LA City employees, including retired public servants and more.
+   In addition to the Nonprofit and Corporate Councils, we will leverage additional partners and networks to engage Angelenos in VolunteerLA including the Department of Neighborhood Empowerment, the Mayor’s field representatives, city departments like Recreation and Parks and the Central Library, the Mayor’s Youth Council, LA City employees, including retired public servants and more.
 project_measure: >-
-  ActivateLA will inspire Angelenos to engage through its brand and will make
+  VolunteerLA will inspire Angelenos to engage through its brand and will make
   volunteering easier by creating the infrastructure to connect, but it will
   also allow us to track real-time data and create a robust city-wide volunteer
   recognition program by leveraging the power of the Mayor’s Office alongside
@@ -117,19 +117,17 @@ project_measure: >-
    
    
    
-   ActivateLA will also strive to support the nonprofit community by helping to ensure that its needs are met through meaningful volunteer engagement. We will look at the percentage of available spots filled and monitor the ‘take rate’ of posted opportunities to give organizations feedback on how opportunities are presented.
+   VolunteerLA will also strive to support the nonprofit community by helping to ensure that its needs are met through meaningful volunteer engagement. We will look at the percentage of available spots filled and monitor the ‘take rate’ of posted opportunities to give organizations feedback on how opportunities are presented.
 project_five_years: >-
-  ActivateLA will grow to be the central hub for volunteerism in the region and
+  VolunteerLA will grow to be the central hub for volunteerism in the region and
   will offer a variety of programs to support service in the city, such as
   nonprofit capacity building, centralized training around relevant issues,
   service learning projects in partnership with LAUSD and a mayoral volunteer
-  recognition program. With the Olympic and Paralympic Games coming to LA in
-  2028, ActivateLA will also be a key partner in helping to train and recruit
-  the thousands of volunteers that will be needed to power the Games.
+  recognition program.
    
    
    
-   As we grow the ActivateLA platform, we can establish Los Angeles as the model of how government, nonprofits, foundations, and companies can partner to productively address our local issues together using technology and collaboration.
+   As we grow the VolunteerLA platform, we can establish Los Angeles as the model of how government, nonprofits, foundations, and companies can partner to productively address our local issues together using technology and collaboration.
 category_metrics:
   - Rates of volunteerism
 category_other:

@@ -18,7 +18,7 @@ organization_facebook: www.facebook.com/Kounkuey/
 organization_instagram:
   - '@kounkuey'
   - '@lurnetwork'
-link_newsletter: 'http://eepurl.com/dpOxHr'
+link_newsletter: 'http://eepurl.com/dxgigH'
 link_donate: 'http://kounkuey.org/donate.html'
 link_volunteer: 'http://kounkuey.org/volunteer.html'
 organization_activity: >-

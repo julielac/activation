@@ -26,6 +26,7 @@ You may want to visit our [home page](/) instead.
 **Please try voting again, using a different web browser.** We recommend the latest version of these browsers:
 
 * [Firefox](https://www.mozilla.org/firefox/)
+* [Opera](https://www.opera.com)
 * [Chrome](https://www.google.com/chrome/)
 * [Microsoft Edge](https://www.microsoft.com/windows/microsoft-edge)
 * [Safari](https://www.apple.com/safari/)
