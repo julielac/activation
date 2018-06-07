@@ -559,6 +559,37 @@
     margin-top: 1.5em;
   }
 
+  #sign-in-email strong {
+    color: inherit !important;
+  }
+  #sign-in-email input:checked ~ .pseudo-checkbox {
+    color: var(--secondary-color, inherit) !important;
+  }
+  #sign-in-email input:focus ~ .pseudo-checkbox svg {
+    outline: 0.375em solid black;
+    outline: 0.375em solid var(--secondary-color, black);
+    outline: auto 5px -webkit-focus-ring-color;
+    background: white;
+  }
+  #sign-in-email .pseudo-checkbox svg {
+    width: 0.75em;
+    height: 0.75em;
+    border: 0.1875em solid currentColor;
+    padding: 0.25em;
+    vertical-align: top;
+    margin-right: 0.5em;
+  }
+  #sign-in-email input[type="checkbox"] {
+    position: absolute;
+    left: -9999px;
+  }
+  #sign-in-email .pseudo-checkbox svg path {
+    fill: transparent;
+  }
+  #sign-in-email input:checked ~ .pseudo-checkbox svg path {
+    fill: currentColor;
+  }
+
   @media (false) {
     #sign-in-phone,
     #sign-in-email,
@@ -589,6 +620,17 @@
     position: relative;
     z-index: 2;
   }
+
+  .introduction-voting,
+  #questions,
+  #sign-in-phone,
+  #sign-in-email,
+  #zip,
+  #finish {
+    position: relative;
+    z-index: 2;
+  }
+
   #sign-in-phone h2,
   #sign-in-phone h3,
   #sign-in-email h2,
@@ -681,6 +723,10 @@
   /* SHIM: Make it easier to see which item has focus, when using the form by keyboard */
   @media (orientation: landscape) {
     .progress {
+      /*
+      bottom: auto;
+      top: 0;
+      */
       background: rgba(245, 245, 245, 0.75);
     }
   }

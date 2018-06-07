@@ -140,7 +140,7 @@ stylesheets:
     <section id="sign-in-phone" class="strawberry">
       <div>
         <h2>Sign in with your phone</h2>
-        <p>Next, we’ll send a text message to your phone number, with instructions.</p>
+        <p>Next we’ll send a text message to your phone number with a verification code.</p>
         <p class="field-button">
           <label>
             <span class="label-text">Phone number</span>
@@ -153,24 +153,40 @@ stylesheets:
     </section>
 
     <section id="sign-in-email" class="lime">
-      <div style="max-width: 40em">
+      <div style="max-width: 33em">
         <h2>Sign in with email</h2>
-        <p>Next, we’ll send a message to your email address, with instructions.</p>
+        <p style="max-width: 24em;margin-left: auto;margin-right: auto;">Next we’ll send a message to your email address with a link you can press to sign in.</p>
         <p class="field-button banana">
           <label>
             <span class="label-text">Email address</span>
             <input type="email" name="email" placeholder="example@mail.com" />
           </label>
-          <button type="submit">Send email</button>
+          <button type="submit"><!--<span id="subscribe-button-label">Subscribe &amp; </span>-->Send Email Message</button>
         </p>
-        <p style="text-align: left;margin-bottom: 0;">
+        <p style="text-align: left; margin-bottom: 0; margin-left: 1.5em; margin-top: 1.5em">
           <label>
-            <input type="checkbox" name="subscribe_email_list" value="1" checked="checked" style="font-size: inherit;">
-            Subscribe me to the mailing list
+            <input type="checkbox" name="subscribe_email_list" value="1" checked="checked" style=" font-size: inherit;">
+            <span class="pseudo-checkbox">
+              <svg width="24" height="24" viewBox="0 0 512 512">
+                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+              </svg>
+            </span>
+            <strong style="">Subscribe me to the LA2050 newsletter</strong>
           </label>
         </p>
-        <p style="line-height: 1.1;text-align: left;margin-left: 1.25em;margin-top: 0;"><small>We'd love to keep in touch, but we don't want to end up in your spam folder. Keep this box checked to sign up for the LA2050 newsletter and twice a month, you'll receive updates on awesome orgs in LA, events, and jobs that are shaping the future of our region. Join the movement!</small></p>
+        <p style="line-height: 1.1; text-align: left;  margin-top: 0; margin-left: 3.875em; margin-right: 1.5em;"><small>We'd love to keep in touch, but we don't want to end up in your spam folder. Keep this box checked to sign up for the LA2050 newsletter and twice a month, you'll receive updates on awesome orgs in LA, events, and jobs that are shaping the future of our region. <strong style="display: inline-block; color: inherit !important;">Join the movement!</strong></small></p>
       </div>
+      <!--
+      <script>
+        document.querySelector('input[name="subscribe_email_list"]').addEventListener('change', function(e) {
+          if (e.target.checked) {
+            document.getElementById('subscribe-button-label').style.display = 'inline';
+          } else {
+            document.getElementById('subscribe-button-label').style.display = 'none';
+          }
+        })
+      </script>
+      -->
     </section>
 
   </form>
