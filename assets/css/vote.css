@@ -129,7 +129,7 @@
 
 
   
-/*  form > ul > li:nth-child(1) {
+  form > ul > li:nth-child(1) {
     order: var(--order-1);
   }
   
@@ -147,7 +147,7 @@
   
   form > ul > li:nth-child(5) {
     order: var(--order-5);
-  }*/
+  }
 
  
 
@@ -567,14 +567,22 @@
   #sign-in-email strong {
     color: inherit !important;
   }
-  #sign-in-email input:checked ~ .pseudo-checkbox {
-    color: var(--secondary-color, inherit) !important;
+  #sign-in-email input:checked ~ .pseudo-checkbox svg {
+    color: white !important;
+    background: var(--secondary-color, inherit);
+    border-color: var(--secondary-color, inherit);
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  }
+  #sign-in-email input:checked ~ .pseudo-checkbox svg path {
+    transition: fill 0.2s;
   }
   #sign-in-email input:focus ~ .pseudo-checkbox svg {
     outline: 0.375em solid black;
     outline: 0.375em solid var(--secondary-color, black);
     outline: auto 5px -webkit-focus-ring-color;
+    color: var(--secondary-color, inherit) !important;
     background: white;
+    border-color: currentColor;
   }
   #sign-in-email .pseudo-checkbox svg {
     width: 0.75em;
@@ -583,6 +591,9 @@
     padding: 0.25em;
     vertical-align: top;
     margin-right: 0.5em;
+    margin-top: -0.5em;
+    font-size: 1.5em;
+    margin-left: -0.675em;
   }
   #sign-in-email input[type="checkbox"] {
     position: absolute;
@@ -605,10 +616,12 @@
   #sign-in-email .checkbox {
     text-align: left;
     margin-bottom: 0;
-    margin-top: 1.5em
+    margin-top: 1.5em;
+    margin-left: 1.5em;
   }
   #sign-in-email .checkbox label {
     display: flex;
+    line-height: 1.125;
   }
   #sign-in-email .checkbox input[type="checked"] {
     font-size: inherit;
@@ -617,15 +630,13 @@
     line-height: 1.125;
     text-align: left;
     margin-top: 0;
-    margin-left: 2.175em
+    margin-left: 3.675em;
   }
   @media (min-width: 30em) {
     #sign-in-email .checkbox {
-      margin-left: 1.5em;
       margin-right: 1.5em;
     }
     #sign-in-email .note {
-      margin-left: 3.675em;
       margin-right: 1.5em;
     }
   }

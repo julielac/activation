@@ -91,7 +91,7 @@
   {% if site.phase == 5 %}
   <p class="count" style="margin-top: 3em; margin-left: auto; margin-right: auto; margin-bottom: 4.5em;"><a href="/vote/" style="color: inherit; font-weight: inherit;">Vote for one of these <strong style="color: inherit; font-weight: inherit;">5</strong> entries</a> in the <strong style="color: var(--primary-color, inherit); text-transform: uppercase;">{{ page.category }}</strong> category, starting June 19, 2018.</p>
   {% elsif site.phase == 6 %}
-  <p class="count" style="margin-top: 3em; margin-left: auto; margin-right: auto; margin-bottom: 4.5em;"><a href="/vote/" style="color: inherit; font-weight: inherit;">Vote for one of these <strong style="color: inherit; font-weight: inherit;">5</strong> entries</a> in the <strong style="color: var(--primary-color, inherit); text-transform: uppercase;">{{ page.category }}</strong> category, by June 29, 2018.</p>
+  <p class="count" style="margin-top: 3em; margin-left: auto; margin-right: auto; margin-bottom: 4.5em;"><a href="{{ site.vote_url }}" style="color: inherit; font-weight: inherit;">Vote for one of these <strong style="color: inherit; font-weight: inherit;">5</strong> entries</a> in the <strong style="color: var(--primary-color, inherit); text-transform: uppercase;">{{ page.category }}</strong> category, by June 29, 2018.</p>
   {% else %}
   <p class="count" style="margin-top: 3em; margin-left: auto; margin-right: auto; margin-bottom: 4.5em;">There are <strong style="color: var(--primary-color, inherit)">5</strong> finalists in the <strong style="color: var(--primary-color, inherit); text-transform: uppercase;">{{ page.category }}</strong> category.</p>
   {% endif %}

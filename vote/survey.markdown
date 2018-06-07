@@ -138,7 +138,7 @@ You may want to visit our [home page](/) instead.
   <p>
     <label name="income">
       What is your annual income range?<br />
-      <select>
+      <select name="income">
         <option value="">Select</option>
         <option value="">-----------------</option>
         <option>Less than $25,000</option>

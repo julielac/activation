@@ -144,6 +144,11 @@
 
     votesData.push('zip=' + encodeURIComponent(zip));
 
+    var subscribe_email_list = document.querySelector('input[name="subscribe_email_list"]').value;
+    if (subscribe_email_list === "1") {
+      votesData.push("subscribe_email_list=1")
+    }
+
     if (telephone && telephone.indexOf('+') !== 0) telephone = '+1 ' + telephone
 
     if (telephone) {
@@ -242,6 +247,11 @@
     votesData.push('zip=' + encodeURIComponent(zip));
 
     votesData.push('social_network=' + encodeURIComponent(socialNetwork))
+
+    var subscribe_email_list = document.querySelector('input[name="subscribe_email_list"]').value;
+    if (subscribe_email_list === "1") {
+      votesData.push("subscribe_email_list=1")
+    }
 
     console.dir(votesData);
 
