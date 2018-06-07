@@ -550,9 +550,14 @@
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.15);
     border-color: transparent;
-    padding: 3em;
+    padding: 1.5em;
     /*max-width: 40em;*/
     /*margin: 3em auto;*/
+  }
+  @media (min-width: 30em) {
+    form section {
+      padding: 3em;
+    }
   }
   form section h2,
   form section h3 {
@@ -588,6 +593,45 @@
   }
   #sign-in-email input:checked ~ .pseudo-checkbox svg path {
     fill: currentColor;
+  }
+  #sign-in-email > div {
+    max-width: 33em;
+  }
+  #sign-in-email h2 + p {
+    max-width: 24em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #sign-in-email .checkbox {
+    text-align: left;
+    margin-bottom: 0;
+    margin-top: 1.5em
+  }
+  #sign-in-email .checkbox label {
+    display: flex;
+  }
+  #sign-in-email .checkbox input[type="checked"] {
+    font-size: inherit;
+  }
+  #sign-in-email .note {
+    line-height: 1.125;
+    text-align: left;
+    margin-top: 0;
+    margin-left: 2.175em
+  }
+  @media (min-width: 30em) {
+    #sign-in-email .checkbox {
+      margin-left: 1.5em;
+      margin-right: 1.5em;
+    }
+    #sign-in-email .note {
+      margin-left: 3.675em;
+      margin-right: 1.5em;
+    }
+  }
+  #sign-in-email .note strong {
+    display: inline-block;
+    color: inherit !important;
   }
 
   @media (false) {

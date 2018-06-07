@@ -22,52 +22,9 @@ You may want to visit our [home page](/) instead.
 <h2 style="text-align: center; margin-left: auto; margin-right: auto; max-width: 20em; font-size: 2em;">Help LA2050 determine how much of Los Angeles we’re reaching</h2>
 <p style="font-size: inherit;"><small style="font-size: inherit;">Providing this information is optional. You can <a href="/vote/confirmation/">skip this step</a>.</small></p>
 
+</div>
+
 <form name="vote_survey" action="/vote/confirmation/" method="post" data-netlify="true">
-
-  <p>
-    <label>
-      What is your age?<br />
-      <select name="age">
-        <option value="">Choose one</option>
-        <option>14-17</option>
-        <option>18-25</option>
-        <option>26-34</option>
-        <option>35-44</option>
-        <option>45-54</option>
-        <option>55-64</option>
-        <option>65 and up</option>
-      </select>
-    </label>
-  </p>
-
-  <p>
-    <label>
-      Which gender do you most strongly identify with?<br />
-      <select name="gender">
-        <option value="">Choose one</option>
-        <option>Male</option>
-        <option>Female</option>
-        <option>Other / I’d rather not say</option>
-      </select>
-    </label>
-  </p>
-
-  <p>
-    <label>
-      Which ethnic or racial group do you most strongly identify with?<br />
-      <select name="race">
-        <option value="">Choose one</option>
-        <option>Native American or Alaskan Native</option>
-        <option>Asian</option>
-        <option>Black or African-American</option>
-        <option>Hispanic or Latino</option>
-        <option>Middle Eastern or North African</option>
-        <option>Native Hawaiian or Pacific Islander</option>
-        <option>White</option>
-        <option>Other</option>
-      </select>
-    </label>
-  </p>
 
   <p>
     <label>
@@ -92,40 +49,10 @@ You may want to visit our [home page](/) instead.
 
   <p>
     <label>
-      What is the highest education level you have attained?<br />
-      <select>
-        <option value="">Choose one</option>
-        <option>Grade school</option>
-        <option>High school</option>
-        <option>Associates</option>
-        <option>Bachelors</option>
-        <option>Advanced Degree</option>
-      </select>
-    </label>
-  </p>
-
-  <p>
-    <label>
-      What is your approximate annual income?<br />
-      <select>
-        <option value="">Choose one</option>
-        <option>Less than $25,000</option>
-        <option>$25,000 to $34,999</option>
-        <option>$35,000 to $49,999</option>
-        <option>$50,000 to $74,999</option>
-        <option>$75,000 to $99,999</option>
-        <option>$100,000 to $149,999</option>
-        <option>$150,000 to $199,999</option>
-        <option>$200,000 or more</option>
-      </select>
-    </label>
-  </p>
-
-  <p>
-    <label>
       Where do you get the majority of your news?<br />
-      <select>
-        <option value="">Choose one</option>
+      <select name="news_source">
+        <option value="">Select</option>
+        <option value="">-----------------</option>
         <option>Traditional print newspapers and magazines (e.g. LA Times)</option>
         <option>Traditional online media outlets (e.g. CNN)</option>
         <option>Online-only media outlets</option>
@@ -135,6 +62,7 @@ You may want to visit our [home page](/) instead.
         <option>Radio</option>
         <option>Information shared by friends or family</option>
         <option>Community groups or organizations</option>
+        <option>I’d rather not say</option>
       </select>
     </label>
   </p>
@@ -142,8 +70,9 @@ You may want to visit our [home page](/) instead.
   <p>
     <label>
       How did you find out about LA2050?<br />
-      <select>
-        <option value="">Choose one</option>
+      <select name="how_you_found_la2050">
+        <option value="">Select</option>
+        <option value="">-----------------</option>
         <option>LA2050 Newsletter</option>
         <option>Community group or organization</option>
         <option>Friends or family</option>
@@ -152,6 +81,93 @@ You may want to visit our [home page](/) instead.
         <option>News outlet</option>
         <option>Advertisements</option>
         <option>Other</option>
+        <option>I’d rather not say</option>
+      </select>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Which gender do you most strongly identify with?<br />
+      <select name="gender">
+        <option value="">Select</option>
+        <option value="">-----------------</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+        <option>I’d rather not say</option>
+      </select>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Which ethnic or racial group do you most strongly identify with?<br />
+      <select name="race">
+        <option value="">Select</option>
+        <option value="">-----------------</option>
+        <option>Native American or Alaskan Native</option>
+        <option>Asian</option>
+        <option>Black or African-American</option>
+        <option>Hispanic or Latino</option>
+        <option>Middle Eastern or North African</option>
+        <option>Native Hawaiian or Pacific Islander</option>
+        <option>White</option>
+        <option>Other</option>
+        <option>I’d rather not say</option>
+      </select>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      What is the highest education level you have attained?<br />
+      <select name="education">
+        <option value="">Select</option>
+        <option value="">-----------------</option>
+        <option>Grade school</option>
+        <option>High school</option>
+        <option>Associates</option>
+        <option>Bachelors</option>
+        <option>Advanced Degree</option>
+        <option>I’d rather not say</option>
+      </select>
+    </label>
+  </p>
+
+  <p>
+    <label name="income">
+      What is your annual income range?<br />
+      <select>
+        <option value="">Select</option>
+        <option value="">-----------------</option>
+        <option>Less than $25,000</option>
+        <option>$25,000 to $34,999</option>
+        <option>$35,000 to $49,999</option>
+        <option>$50,000 to $74,999</option>
+        <option>$75,000 to $99,999</option>
+        <option>$100,000 to $149,999</option>
+        <option>$150,000 to $199,999</option>
+        <option>$200,000 or more</option>
+        <option>I’d rather not say</option>
+      </select>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      What is your age range?<br />
+      <select name="age">
+        <option value="">Select</option>
+        <option value="">-----------------</option>
+        <option>14-17</option>
+        <option>18-25</option>
+        <option>26-34</option>
+        <option>35-44</option>
+        <option>45-54</option>
+        <option>55-64</option>
+        <option>65 and up</option>
+        <option>I’d rather not say</option>
       </select>
     </label>
   </p>
@@ -161,34 +177,57 @@ You may want to visit our [home page](/) instead.
   </p>
 </form>
 
-</div>
-
 <style>
 .promotion {
   display: none;
 }
-.introduction form {
+.introduction {
+  margin-bottom: 0;
+}
+form {
   margin-top: 3em;
   text-align: left;
   margin-left: auto;
   margin-right: auto;
-  max-width: 30em;
+  max-width: 40em;
+  margin-bottom: 7.5em;
 }
-.introduction form p {
+form p {
   text-align: left;
   /*margin-top: 1.5em;*/
   font-size: 1rem !important;
 }
-.introduction form select {
-  display: block;
-  font-size: inherit;
+form p,
+form p.action {
+  margin-top: 1.5em;
+  padding-top: 1.125em;
+  border-top: 1px dashed rgba(141, 208, 59, 1); /* @lime */
+  border-top: 1px dashed rgba(0, 0, 0, 0.25);
 }
-.introduction form button {
+@media (min-width: 30em) {
+  form p,
+  form p.action {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+}
+/*form p:first-child,
+form p.action {
+  border-top: 0.1875em solid rgba(0, 0, 0, 0.1);
+}*/
+form p.action {
+  padding-top: 3em;
+  text-align: center;
+}
+form input[type="text"],
+form select {
+  margin-top: 0.375em;
+  font-size: inherit;
+  max-width: 100%;
+}
+form button {
   width: 100%;
   max-width: 20em;
-}
-form p {
-  margin-top: 3em;
 }
 form input[type="text"],
 form input[type="number"] {
