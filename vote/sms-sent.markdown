@@ -38,6 +38,9 @@ We sent you a text message with a verification code. Please enter it here.
 </p>
 </form>
 
+<h3 style="max-width: none; text-align: center; margin-bottom: 0;" id="headline"></h3>
+<p style="margin-top: 0"><small id="message-details"></small></p>
+
 <style>
 .promotion {
 	display: none;
@@ -102,15 +105,49 @@ form input[type="text"] {
 </script>
 
 <script src="https://cdn.auth0.com/js/auth0/9.3.1/auth0.min.js"></script>
-<script type="text/javascript">
-</script>
 
 <script>
+  function showSaveMessage(err) {
+    document.getElementById('headline').textContent = 'Saving your votes…'
+    button.style.visibility = 'hidden'
+  }
+
+  function showErrorMessage(message) {
+    console.log('showErrorMessage: ' + message)
+
+    if (message === "Wrong phone number or verification code.") message = "That verification code isn’t quite right. Please try entering it again."
+
+    if (message === "Invalid request body. All and only of client_id, credential_type, username, otp, realm are required.") message = "Please enter the verification code that we sent you."
+
+    document.getElementById('headline').textContent      = 'Oops! Something went wrong'
+    document.getElementById('message-details').textContent = message
+
+    // form.action = '/vote/form/'
+    // form.method = 'get'
+    // button.style.visibility = 'visible'
+    // button.textContent = 'Start over'
+
+    // if (saveTimeout) clearTimeout(saveTimeout)
+  }
+
+  // var saveTimeout
+  // function refreshTimeout() {
+  //   if (saveTimeout) clearTimeout(saveTimeout)
+  //   saveTimeout = setTimeout(function() {
+  //     showErrorMessage('The sign in process timed out.')
+  //   }, 5000)
+  // }
+
   function submitVerificationCode(form){
     console.log('submitVerificationCode');
 
     var telephone = document.querySelector('input[name="telephone"]').value;
     var verificationCode = document.querySelector('input[name="verification_code"]').value;
+
+    if (!telephone) {
+      showErrorMessage("Please try voting again.");
+      return; 
+    }
 
     var fieldNames = ['learn', 'create', 'play', 'connect', 'live'];
     var votesData = [];
@@ -126,12 +163,13 @@ form input[type="text"] {
 
     if ((votesData).length < 1) {
       console.error('No items were voted for');
+      showErrorMessage("Please try voting again.");
       return;
     }
 
     var zip = document.querySelector('input[name="zip"]').value;
     if (!zip || zip == '') {
-      console.error('No zip code')
+      console.log('No zip code')
     }
 
     votesData.push('zip=' + encodeURIComponent(zip));
@@ -160,24 +198,23 @@ form input[type="text"] {
       }, function (err,res) {
         if (err) {
           // Handle error
+          showErrorMessage(err.errorDescription || err.description)
+
+          console.log('err');
+          console.log(err)
+          console.dir(err)
         } else {
+
+          console.log('res');
+          console.log(res)
+          console.dir(res)
+
           // form.action = form.action + '?' + votesData.join('&');
           // form.submit();
           // document.querySelector('.introduction').style.display = 'block';
           // document.querySelector('form').style.display = 'none';
         }
 
-        console.log('err');
-        console.log(err)
-        console.dir(err)
-
-        console.log('res');
-        console.log(res)
-        console.dir(res)
-
-        // Hide the input and show a "Check your email for your login link!" screen
-        //$('.enter-email').hide();
-        //$('.check-email').show();
 
       }
     );

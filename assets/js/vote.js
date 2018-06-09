@@ -247,11 +247,6 @@
 
     votesData.push('social_network=' + encodeURIComponent(socialNetwork))
 
-    var subscribe_email_list = document.querySelector('input[name="subscribe_email_list"]').value;
-    if (subscribe_email_list === "1") {
-      votesData.push("subscribe_email_list=1")
-    }
-
     console.dir(votesData);
 
     var redirectUri = window.location.origin + '/vote/authenticated/?' + votesData.join('&');

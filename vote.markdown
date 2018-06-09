@@ -22,7 +22,7 @@ Starting **June 19, 2018** <small class="avoid-break">(9am Pacific Time)</small>
 You can cast five votes, one per goal category.<br /><a href="/finalists/" style="color: var(--primary-color)">Check out the finalists</a> and then vote by <strong>June 29, 2018</strong> (5pm Pacific Time).
 
 <p class="action">
-  <a href="{{ site.vote_url }}#questions">I’m ready to vote</a>
+  <a href="{{ site.vote_url }}">I’m ready to vote</a>
 </p>
 
 {% elsif site.phase == 7 %}
