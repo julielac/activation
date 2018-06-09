@@ -606,7 +606,7 @@
     fill: currentColor;
   }
   #sign-in-email > div {
-    max-width: 33em;
+    max-width: 40em;
   }
   #sign-in-email h2 + p {
     max-width: 24em;
@@ -645,21 +645,6 @@
     color: inherit !important;
   }
 
-  @media (false) {
-    #sign-in-phone,
-    #sign-in-email,
-    #zip,
-    #finish {
-      background: rgb(254, 254, 254); /* @snow */
-      color: rgb(41, 41, 41); /* @midnight */
-      margin-left: -1.5em;
-      margin-right: -1.5em;
-      box-sizing: border-box;
-      min-height: 100vh;
-      position: relative;
-      z-index: 2;
-    }
-  }
   #sign-in-phone,
   #sign-in-email,
   #zip,

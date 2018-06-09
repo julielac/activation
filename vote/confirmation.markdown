@@ -19,7 +19,7 @@ You may want to visit our [home page](/) instead.
 
 <h2 style="max-width: none; text-align: center; font-size: 2.5em;">Thanks for voting!</h2>
 
-Your votes have been confirmed, and will help us choose the winners.
+Your votes have been received, and will help us choose the winners.
 
 <!--
 <small>The winners will be announced on <strong>July 9, 2018</strong>.</small>

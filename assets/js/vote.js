@@ -60,7 +60,7 @@
         scrollToElement('finish')
         if (!usingMouse) {
           setTimeout(function() {
-            document.querySelector('button[name="sign_in_by').focus()
+            document.querySelector('button[name="sign_in_by"]').focus()
           }, 1000)
         }
       }
@@ -95,7 +95,7 @@
           scrollToElement('finish')
           if (!usingMouse) {
             setTimeout(function() {
-              document.querySelector('button[name="sign_in_by').focus()
+              document.querySelector('button[name="sign_in_by"]').focus()
             }, 1000)
           }
         }
@@ -303,7 +303,7 @@
           scrollToElement('finish')
           if (!usingMouse) {
             setTimeout(function() {
-              document.querySelector('button[name="sign_in_by').focus()
+              document.querySelector('button[name="sign_in_by"]').focus()
             }, 1000)
           }
           finishSeen = true
@@ -556,3 +556,23 @@
   document.querySelector('.facebook.hidden').classList.remove('hidden')
 
 })();
+
+(function() {
+  if (!document.body.querySelector || !document.body.addEventListener || !document.body.textContent) return
+
+  var checkbox = document.querySelector('input[name="subscribe_email_list"]')
+  var button   = document.getElementById('send-email-button')
+
+  function update() {
+    if (checkbox.checked) {
+      button.textContent = 'Subscribe & Send Email'
+    } else {
+      button.textContent = 'Send Email'
+    }
+  }
+
+  if (checkbox && button) {
+    update()
+    checkbox.addEventListener('change', update)
+  }
+})()

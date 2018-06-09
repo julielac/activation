@@ -22,7 +22,7 @@ Starting **June 19, 2018** <small class="avoid-break">(9am Pacific Time)</small>
 You can cast five votes, one per goal category.<br /><a href="/finalists/" style="color: var(--primary-color)">Check out the finalists</a> and then vote by <strong>June 29, 2018</strong> (5pm Pacific Time).
 
 <p class="action">
-  <a href="{{ site.vote_url }}">I’m ready to vote</a>
+  <a href="{{ site.vote_url }}#questions">I’m ready to vote</a>
 </p>
 
 {% elsif site.phase == 7 %}
@@ -70,7 +70,7 @@ The finalists will represent a diverse set of issues, engagement strategies, and
 * Members of the public may vote once per goal category for a total of five votes.
 * Voters must be at least 14 years old and a US resident.
 * Voters must log in to participate in the My LA2050 Activation Challenge.
-* Voters can verify their votes by signing in with their Facebook account, mobile phone, or email address. Voters using an email account will be sent a link to click in order to validate their votes. Voters using a mobile phone will be sent a confirmation code to enter in order to validate their votes.
+* Voters can verify their votes by signing in with their Facebook account, mobile phone, or email address. Voters using an email account will be sent a link to press, and voters using a mobile phone will be sent a confirmation code to enter—in order to confirm their votes.
 
 ### Questions
 
