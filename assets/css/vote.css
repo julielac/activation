@@ -47,12 +47,37 @@
 
   .introduction {
     background-color: rgb(125, 212, 222);
-    background-image: url(/assets/images/vote-background.jpg);
+    background-image: url(/assets/images/vote/512-wide/background.jpg);
     background-size: cover;
     background-position: center;
     color: white;
     font-weight: bold;
   }
+
+  @media (min-width: 384px), (min-height: 384px) {
+    .introduction {
+      background-image: url(/assets/images/vote/768-wide/background.jpg);
+    }
+  }
+
+  @media (min-width: 512px), (min-height: 512px) {
+    .introduction {
+      background-image: url(/assets/images/vote/1024-wide/background.jpg);
+    }
+  }
+
+  @media (min-width: 768px), (min-height: 768px) {
+    .introduction {
+      background-image: url(/assets/images/vote/1536-wide/background.jpg);
+    }
+  }
+
+  @media (min-width: 1024px), (min-height: 1024px) {
+    .introduction {
+      background-image: url(/assets/images/vote/2048-wide/background.jpg);
+    }
+  }
+
   /*.introduction::before {
     content: "";
     position: absolute;

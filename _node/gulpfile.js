@@ -78,6 +78,11 @@ gulp.task("default", function() {
   // generateNext();
 
   // sizesCursor = 0;
+  // sourceImagePath     = '../assets/images/vote/original';
+  // generatedImagePath  = '../assets/images/vote';
+  // generateNext();
+
+  // sizesCursor = 0;
   // sourceImagePath     = '../assets/images/learn/original';
   // generatedImagePath  = '../assets/images/learn';
   // generateNext();
