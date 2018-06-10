@@ -284,6 +284,7 @@
       if (document.querySelectorAll('input[type="radio"]:checked').length >= 1) {
         if (!zipSeen) {
           zip.classList.remove('hidden')
+          zip.setAttribute('required', 'required')
           zipShowing = true
           scrollToElement('zip')
           setTimeout(function() {
@@ -461,6 +462,7 @@
     finish.classList.add('hidden');
     var zip = document.getElementById('zip');
     zip.classList.add('hidden');
+    zip.removeAttribute('required');
     updateProgress = function() {
       if (!progress) progress = document.getElementById("progress");
       if (!count) count = document.getElementById("vote-count");
@@ -488,6 +490,7 @@
 
       if (counter >= 1 && !zipShowing) {
         zip.classList.remove('hidden');
+        zip.setAttribute('required', 'required')
         zipShowing = true;
         setUpConfirmButton()
       }

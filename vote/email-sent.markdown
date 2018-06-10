@@ -19,7 +19,7 @@ You may want to visit our [home page](/) instead.
 
 <h2 style="max-width: none; text-align: center; font-size: 2.5em;">Please check your email</h2>
 
-We sent you a message to your email address with a link you can press to confirm your votes.
+<p>We sent a message to your email address with a link you can press to <span style="display: inline-block">confirm your votes.</span></p>
 
 <small>Didn’t get an email? It might be in your “spam” folder.</small>
 

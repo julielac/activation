@@ -19,7 +19,7 @@ You may want to visit our [home page](/) instead.
 
 <h2 style="max-width: none; text-align: center; font-size: 2.5em;">Please check your phone</h2>
 
-We sent you a text message with a verification code. Please enter it here.
+We sent a text message to your phone number with a verification code. <span style="display: inline-block;">Please enter it here.</span>
 
 <form action="/vote/sms-sent/" method="get">
 <input type="hidden" name="learn" />
@@ -32,7 +32,7 @@ We sent you a text message with a verification code. Please enter it here.
 
 <p style="font-size: 1em">
   <label>
-    <input type="text" pattern="[0-9]*" inputmode="number" placeholder="Verification Code" name="verification_code" />
+    <input type="text" pattern="[0-9]*" inputmode="number" placeholder="Verification Code" name="verification_code" required="required" />
     <button type="submit">Submit</button>
   </label>
 </p>
