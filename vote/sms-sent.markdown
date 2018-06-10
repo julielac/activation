@@ -32,7 +32,7 @@ We sent you a text message with a verification code. Please enter it here.
 
 <p style="font-size: 1em">
   <label>
-    <input type="text" placeholder="Verification Code" name="verification_code" />
+    <input type="text" pattern="[0-9]*" inputmode="number" placeholder="Verification Code" name="verification_code" />
     <button type="submit">Submit</button>
   </label>
 </p>
