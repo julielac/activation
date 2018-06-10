@@ -29,13 +29,13 @@ You may want to visit our [home page](/) instead.
   <p>
     <label>
       What language do you speak at home?<br />
-      <input type="text" name="language" placeholder="" />
+      <input type="text" name="language" placeholder="हिन्दी, 日本語, English, Español, ไทย" />
     </label>
   </p>
   <script>
   (function() {
     //var languages = "हिन्दी, 中文, Français, 한국어, Deutsche, English, Español, ไทย, 日本語, فارسی, Tiếng Việt, ລາວ, Samala, עִברִית, አማርኛ, 中文".split(', ')
-    var languages = "हिन्दी, 日本語, English, Español, ไทย".split(', ')
+    var languages = document.querySelector('input[name="language"]').placeholder.split(', ')
 
     languages.sort(function(a, b) {
       var random = Math.floor(Math.random() * languages.length) + 1;

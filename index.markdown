@@ -154,7 +154,7 @@ Read our <a href="/submit/#guidelines">guidelines for proposals</a>.
 {% elsif site.phase == 6 %}
 
 <p>
-  <a href="/vote/">It’s time to vote</a>!
+  <a href="{{ site.vote_url }}">It’s time to vote</a>!
   Winners will be announced on 
   <span class="avoid-break">
     <strong>July 9, 2018</strong>.

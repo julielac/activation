@@ -128,27 +128,27 @@
   }*/
 
 
-  
-  form > ul > li:nth-child(1) {
+  /*
+  form .category ul > li:nth-child(1) {
     order: var(--order-1);
   }
   
-  form > ul > li:nth-child(2) {
+  form .category ul > li:nth-child(2) {
     order: var(--order-2);
   }
   
-  form > ul > li:nth-child(3) {
+  form .category ul > li:nth-child(3) {
     order: var(--order-3);
   }
   
-  form > ul > li:nth-child(4) {
+  form .category ul > li:nth-child(4) {
     order: var(--order-4);
   }
   
-  form > ul > li:nth-child(5) {
+  form .category ul > li:nth-child(5) {
     order: var(--order-5);
   }
-
+  */
  
 
   .promotion {
@@ -160,12 +160,12 @@
   form {
     text-align: center;
   }
-  form > ul {
+  form .category ul {
     margin-left: -1.5em !important;
     margin-right: -1.5em !important;
   }
-  form > ul,
-  form > ul > li {
+  form .category ul,
+  form .category ul > li {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
@@ -175,8 +175,8 @@
   form h3,
   form h4,
   form p,
-  form > ul,
-  form > ul > li {
+  form .category ul,
+  form .category ul > li {
     max-width: none;
   }
   form h2,
@@ -196,15 +196,15 @@
     /*font-weight: 500;*/
     color: var(--primary-color) !important;
   }
-  form > ul > li label {
+  form .category ul > li label {
     cursor: pointer;
   }
-  form > ul > li input {
+  form .category ul > li input {
     font-size: inherit;
     margin-bottom: 0.75em;
   }
   /*
-  form > ul > li .mask {
+  form .category ul > li .mask {
     position: absolute;
     top: 0;
     left: 0;
@@ -219,8 +219,8 @@
     font-size: 1.5em;
   }
   */
-  form > ul > li .call-to-action,
-  form > ul > li .pseudo-checkbox {
+  form .category ul > li .call-to-action,
+  form .category ul > li .pseudo-checkbox {
     position: absolute;
     bottom: 0em;
     left: 0;
@@ -244,65 +244,65 @@
     margin: calc(0px -1px);
     width: calc(100% + 2px);
   }
-  form > ul > li .call-to-action strong,
-  form > ul > li .pseudo-checkbox strong {
+  form .category ul > li .call-to-action strong,
+  form .category ul > li .pseudo-checkbox strong {
    color: inherit !important;
    font-weight: bold;
    text-transform: uppercase;
   }
-  form > ul > li input {
+  form .category ul > li input {
     position: absolute;
     z-index: 2;
     opacity: 0;
     bottom: 0.5em;
     left: 1em;
   }
-  form > ul > li label .text {
+  form .category ul > li label .text {
     position: absolute;
     left: -9999px;
   }
-  form > ul > li label input:checked ~ .call-to-action,
-  form > ul > li label input:checked ~ .pseudo-checkbox,
-  form > ul > li label:hover .call-to-action,
-  form > ul > li label:hover .pseudo-checkbox {
+  form .category ul > li label input:checked ~ .call-to-action,
+  form .category ul > li label input:checked ~ .pseudo-checkbox,
+  form .category ul > li label:hover .call-to-action,
+  form .category ul > li label:hover .pseudo-checkbox {
     background: var(--primary-color);
     color: white;
   }
-  form > ul > li label input:focus ~ .call-to-action,
-  form > ul > li label input:focus ~ .pseudo-checkbox {
+  form .category ul > li label input:focus ~ .call-to-action,
+  form .category ul > li label input:focus ~ .pseudo-checkbox {
     outline: 0.375em solid black;
     outline: 0.375em solid var(--primary-color, black);
     outline: auto 5px -webkit-focus-ring-color;
   }
-  form > ul > li .pseudo-checkbox {
+  form .category ul > li .pseudo-checkbox {
     display: none;
   }
-  form > ul > li label .call-to-action {
+  form .category ul > li label .call-to-action {
     /*background: rgba(0, 0, 0, 0.5);*/
     opacity: 1;
   }
-  /*form > ul > li .call-to-action strong {
+  /*form .category ul > li .call-to-action strong {
     display: none;
   }*/
-  form > ul > li input:checked ~ .call-to-action {
+  form .category ul > li input:checked ~ .call-to-action {
     display: none;
   }
-  form > ul > li input:checked ~ .pseudo-checkbox {
+  form .category ul > li input:checked ~ .pseudo-checkbox {
     /*background: rgba(0, 0, 0, 0.5);*/
     opacity: 1;
     display: flex;
   }
-  /*form > ul > li:hover .mask {
+  /*form .category ul > li:hover .mask {
     opacity: 0.25;
   }*/
-  form > ul > li input:checked ~ .mask {
+  form .category ul > li input:checked ~ .mask {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
   }
-  form > ul > li a .mask {
+  form .category ul > li a .mask {
     position: absolute;
     top: 0;
     left: 0;
@@ -325,8 +325,8 @@
   form .lime label .mask {
     background: rgba(141, 208, 59, 0.5); /* @lime */
   }
-  form > ul > li .call-to-action svg,
-  form > ul > li .pseudo-checkbox svg {
+  form .category ul > li .call-to-action svg,
+  form .category ul > li .pseudo-checkbox svg {
     fill: currentColor;
     width: 0.75em;
     height: 0.75em;
@@ -359,7 +359,7 @@
     display: none !important;
   }
 
-  .facebook.hidden {
+  .action.hidden {
     display: none !important;
   }
 
@@ -402,12 +402,12 @@
     }
   }
 
-  form > ul {
+  form .category ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
-  form > ul > li {
+  form .category ul > li {
     position: relative;
     width: 19.5em;
     padding: 0;
@@ -417,12 +417,12 @@
     display: flex;
     flex-direction: row;
   }
-  form > ul > li a {
+  form .category ul > li a {
     box-shadow: 0 0 1px rgba(0, 0, 0, 1);
     flex-grow: 1;
   }
   /*
-  form > ul > li a {
+  form .category ul > li a {
     position: absolute;
     top: 0;
     left: 0;
@@ -433,7 +433,7 @@
     transition: opacity 0.2s;
     opacity: 0;
   }
-  form > ul > li a svg {
+  form .category ul > li a svg {
     background: var(--primary-color);
     color: white;
     width: 0.75em;
@@ -443,89 +443,89 @@
     border: 2px solid transparent;
     opacity: 0;
   }
-  form > ul > li a:hover  svg,
-  form > ul > li a:active svg,
-  form > ul > li a:focus  svg {
+  form .category ul > li a:hover  svg,
+  form .category ul > li a:active svg,
+  form .category ul > li a:focus  svg {
     background: white;
     color: var(--primary-color);
     border-color: var(--primary-color); 
   }
-  form > ul > li a:hover,
-  form > ul > li a:active,
-  form > ul > li a:focus {
+  form .category ul > li a:hover,
+  form .category ul > li a:active,
+  form .category ul > li a:focus {
     opacity: 0.5;
   }
   */
 
-  form > ul > li a,
-  form > ul > li a:hover,
-  form > ul > li a:active,
-  form > ul > li a:focus {
+  form .category ul > li a,
+  form .category ul > li a:hover,
+  form .category ul > li a:active,
+  form .category ul > li a:focus {
     text-decoration: inherit;
     color: inherit;
     font-weight: inherit;
     display: block;
   }
-  form > ul > li .text p {
+  form .category ul > li .text p {
     margin: 0;
     /*font-weight: 600;*/
     /*font-size: 0.875em;*/
     line-height: 1.3125;
   }
-  form > ul > li .text h3 {
+  form .category ul > li .text h3 {
     margin-top: 0;
     margin-bottom: 0.375em;
     font-size: inherit;
     line-height: 1.3125;
   }
-  form > ul > li a:hover  p,
-  form > ul > li a:active p,
-  form > ul > li a:focus  p {
+  form .category ul > li a:hover  p,
+  form .category ul > li a:active p,
+  form .category ul > li a:focus  p {
     text-decoration: underline;
   }
-  form > ul > li a:focus {
+  form .category ul > li a:focus {
     outline: none;
   }
-  form > ul > li a:focus .text-inner {
+  form .category ul > li a:focus .text-inner {
     display: block;
   }
-  form > ul > li a:focus .text-inner {
+  form .category ul > li a:focus .text-inner {
     outline: 0.375em solid black;
     outline: 0.375em solid var(--secondary-color, black);
     outline: 1px dotted;
     outline: auto 5px -webkit-focus-ring-color;
   }
 
-  form > ul > li br {
+  form .category ul > li br {
     display: none;
   }
-  form > ul > li .text {
+  form .category ul > li .text {
     display: block;
     padding: 1.5em 1.5em 2.25em;
   }
-  form > ul > li img {
+  form .category ul > li img {
     display: block;
   }
-  form > ul > li .text strong {
+  form .category ul > li .text strong {
     display: block;
   }
-  form .banana li a {
+  form .category .banana li a {
     box-shadow: 0 0 1px rgba(255, 194, 51, 1); /* @banana */
   }
-  form .blueberry li a {
+  form .category .blueberry li a {
     box-shadow: 0 0 1px rgba(6, 179, 188, 1); /* @blueberry */
   }
-  form .lime li a {
+  form .category .lime li a {
     box-shadow: 0 0 1px rgba(141, 208, 59, 1); /* @lime */
   }
-  form .strawberry li a {
+  form .category .strawberry li a {
     box-shadow: 0 0 1px rgba(237, 59, 136, 1); /* @strawberry */
   }
-  form .tangerine li a {
+  form .category .tangerine li a {
     box-shadow: 0 0 1px rgba(249, 160, 51, 1); /* @tangerine */
   }
   /*
-  form > ul > li label::after {
+  form .category ul > li label::after {
     content: "";
     background: var(--primary-color);
     color: white;
@@ -539,7 +539,7 @@
     height: 3em;
   }
   */
-  form > ul > li img {
+  form .category ul > li img {
     width: 100%;
     max-width: none;
     height: 15em;

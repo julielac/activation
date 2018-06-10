@@ -1,6 +1,7 @@
+<div class="category">
 <h2 class="{{ category_color }}" id="{{ category }}">Who would you like to vote for in the <em class="category">{{ category }}</em> category?</h2>
 
-<ul class="{{ category_color }}">
+<ul class="{{ category }} {{ category_color }}">
 {% assign first_item = true %}
 {% assign data_collection = site.collections | where: "label", category | first %}
 {% assign data_list = data_collection.docs %}
@@ -48,3 +49,6 @@
 {% endif %}
 {% endfor %}
 </ul>
+
+<hr />
+</div>

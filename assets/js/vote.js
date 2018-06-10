@@ -278,7 +278,7 @@
   (function() {
 
     var form = document.querySelector('form[name="vote"]')
-    console.log('form: ' + form)
+    // console.log('form: ' + form)
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       if (document.querySelectorAll('input[type="radio"]:checked').length >= 1) {
@@ -347,78 +347,95 @@
         }
       }
 
-      function updateAndScroll(name) {
-        switch(name) {
-          case 'learn':
-            updateProgress()
-            scrollToElement('create')
-            if (!usingMouse) {
-              setTimeout(function() {
-                document.querySelector('input[name="create"]').focus()
-              }, 1000)
-            }
-            break;
-          case 'create':
-            updateProgress()
-            scrollToElement('play')
-            if (!usingMouse) {
-              setTimeout(function() {
-                document.querySelector('input[name="play"]').focus()
-              }, 1000)
-            }
-            break;
-          case 'play':
-            updateProgress()
-            scrollToElement('connect')
-            if (!usingMouse) {
-              setTimeout(function() {
-                document.querySelector('input[name="connect"]').focus()
-              }, 1000)
-            }
-            break;
-          case 'connect':
-            updateProgress()
-            scrollToElement('live')
-            if (!usingMouse) {
-              setTimeout(function() {
-                document.querySelector('input[name="live"]').focus()
-              }, 1000)
-            }
-            break;
-          case 'live':
-            updateProgress()
-            scrollToElement('zip')
-            if (!usingMouse) {
-              setTimeout(function() {
-                document.querySelector('input[name="zip"]').focus()
-              }, 1000)
-            }
-            zipSeen = true
-            break;
-          default:
-
+      function focusField(name) {
+        if (!usingMouse) {
+          setTimeout(function() {
+            document.querySelector('input[name="' + name + '"]').focus()
+          }, 1000)
         }
+      }
+
+      function updateAndScroll(name) {
+        updateProgress()
+
+        var target = document.getElementById(name)
+        // console.log('target')
+        // console.log(target)
+        var targetContainer = target.parentNode
+
+        var nextSibling = targetContainer.nextSibling;
+        while(nextSibling && nextSibling.nodeType != 1) {
+          nextSibling = nextSibling.nextSibling
+        }
+
+        // console.log('targetContainer')
+        // console.log(targetContainer)
+
+        // console.log('nextSibling')
+        // console.log(nextSibling)
+
+        if (targetContainer) {
+          if (nextSibling.classList.contains('category')) {
+            nextName = nextSibling.querySelector('*[id]').id
+          } else {
+            nextName = "zip"
+            zipSeen = true
+          }
+          scrollToElement(nextName)
+          focusField(nextName)
+        }
+
+        // switch(name) {
+        //   case 'learn':
+        //     updateProgress()
+        //     scrollToElement('create')
+        //     focusElement('create')
+        //     break;
+        //   case 'create':
+        //     updateProgress()
+        //     scrollToElement('play')
+        //     focusElement('play')
+        //     break;
+        //   case 'play':
+        //     updateProgress()
+        //     scrollToElement('connect')
+        //     focusElement('input[name="connect"]')
+        //     break;
+        //   case 'connect':
+        //     updateProgress()
+        //     scrollToElement('live')
+        //     focusElement('input[name="live"]')
+        //     break;
+        //   case 'live':
+        //     updateProgress()
+        //     scrollToElement('zip')
+        //     focusElement('input[name="zip"]')
+        //     zipSeen = true
+        //     break;
+        //   default:
+
+        // }
       }
 
       (function() {
         var keyPressedRecently = false
         window.addEventListener('mousemove', function(e) {
-          console.log('mouse moved')
+          // console.log('mouse moved')
           if (keyPressedRecently) return
           usingMouse = true
-        })
+        }, { passive: true })
         var timer
         window.addEventListener('keyup', function(e) {
-          console.log('key pressed')
+          // console.log('key pressed')
           usingMouse = false
           keyPressedRecently = true
           if (timer) clearTimeout(timer)
           timer = setTimeout(function() {
             keyPressedRecently = false
           }, 1000)
-        })
+        }, { passive: true })
         form.addEventListener('click', function(e) {
-          console.log('form click')
+          // console.log('form click')
           if (e.target.nodeName.toLowerCase() === 'input' && e.target.type === 'radio' && e.target.checked) {
             console.log('e.target.name: ' + e.target.name)
             if (usingMouse) {
@@ -427,7 +444,7 @@
               updateProgress()
             }
           }
-        })
+        }, { passive: true })
       })()
     //});
 
@@ -465,7 +482,7 @@
           } else {
             progress.classList.remove('hidden-button');
           }
-        })
+        }, { passive: true })
 
       }
 
@@ -547,7 +564,9 @@
     signInSocial('facebook');
     e.preventDefault();
   })
-  document.querySelector('.facebook.hidden').classList.remove('hidden')
+
+  document.querySelector('.action.links').classList.add('hidden')
+  document.querySelector('.action.buttons').classList.remove('hidden')
 
 })();
 

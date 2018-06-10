@@ -15,20 +15,9 @@ stylesheets:
 
 {% else %}
 
-  <script>
-  (function() {
-    function getRandomOrder() {
-      return (Math.floor(Math.random() * 10) + 1) - 5;
-    }
-    for (var index = 0; index < 5; index++) {
-      document.documentElement.style.setProperty('--order-' + index, getRandomOrder());
-    }
-  })();
-  </script>
-
   <div class="introduction introduction-voting">
     <div>
-      <a href="/finalists/" class="logo">
+      <a href="/" class="logo">
         {% include logo.html %}
       </a>
       <p>It’s time to vote! Choose one <a href="/finalists/" target="_blank">finalist</a> in each goal category.</p>
@@ -36,7 +25,7 @@ stylesheets:
     </div>
   </div>
 
-  <form name="vote" action="/vote/submit/" method="post" data-netlify="true">
+  <form name="vote" action="/vote/survey/" method="post" data-netlify="true">
 
     <div id="questions">
       <p>
@@ -50,31 +39,21 @@ stylesheets:
     {% assign category_color = "blueberry" %}
     {% include vote-category-fieldset.html %}
 
-    <hr />
-
     {% assign category = "create" %}
     {% assign category_color = "banana" %}
     {% include vote-category-fieldset.html %}
-
-    <hr />
 
     {% assign category = "play" %}
     {% assign category_color = "strawberry" %}
     {% include vote-category-fieldset.html %}
 
-    <hr />
-
     {% assign category = "connect" %}
     {% assign category_color = "tangerine" %}
     {% include vote-category-fieldset.html %}
 
-    <hr />
-
     {% assign category = "live" %}
     {% assign category_color = "lime" %}
     {% include vote-category-fieldset.html %}
-
-    <hr />
 
     <div class="progress hidden" id="progress">
       <!-- <p class="action"><a href="#zip">Confirm my votes</a></p> -->
@@ -123,14 +102,24 @@ stylesheets:
         <h2>You’re <em>almost</em> done!</h2>
         <p>Now it’s time to confirm your vote(s) by signing in with one of your accounts.</p>
         <h3>Sign in with…</h3>
-        <ul class="action">
+
+        <ul class="action links">
+          <li>
+            <a href="#sign-in-phone">Phone</a>
+          </li>
+          <li>
+            <a href="#sign-in-email">Email</a>
+          </li>
+        </ul>
+
+        <ul class="action buttons hidden">
           <li>
             <button type="submit" name="sign_in_by" value="phone">Phone</button>
           </li>
           <li>
             <button type="submit" name="sign_in_by" value="email">Email</button>
           </li>
-          <li class="facebook hidden">
+          <li>
             <button type="submit" name="sign_in_by" value="facebook">Facebook</button>
           </li>
         </ul>
@@ -179,6 +168,58 @@ stylesheets:
     </section>
 
   </form>
+
+  {% comment %}
+  <script>
+  (function() {
+    function getRandomOrder() {
+      return (Math.floor(Math.random() * 10) + 1) - 5
+    }
+
+    for (var index = 0; index < 5; index++) {
+      document.documentElement.style.setProperty('--order-' + index, getRandomOrder());
+    }
+  })();
+  </script>
+  {% endcomment %}
+
+  <script>
+  (function() {
+    if (!document.body.querySelector || !document.body.querySelectorAll) return
+
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    function randomize(selector) {
+      var items = document.querySelectorAll(selector)
+      if (items.length < 1) return
+
+      var nextItem
+      var parent = items[0].parentNode
+
+      for (var index = 0; index < items.length; index++) {
+
+        // Get a random item
+        nextItem = items[getRandomInt(items.length)]
+
+        // Move it before the first item
+        parent.removeChild(nextItem)
+        // console.dir(nextItem)
+        // console.dir(items)
+        parent.insertBefore(nextItem, document.querySelector(selector))
+      }
+    }
+
+    randomize('form > .category')
+    randomize('form ul.learn li')
+    randomize('form ul.create li')
+    randomize('form ul.play li')
+    randomize('form ul.connect li')
+    randomize('form ul.live li')
+  })()
+  </script>
 
   <script src="https://cdn.auth0.com/js/auth0/9.3.1/auth0.min.js"></script>
   <script async src="/assets/js/vote.js"></script>
