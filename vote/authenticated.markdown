@@ -113,7 +113,7 @@ You may want to visit our [home page](/) instead.
 </script>
 
 
-<script src="https://cdn.auth0.com/js/auth0/9.3.1/auth0.min.js"></script>
+<script src="{{ site.auth0_js_url }}"></script>
 <script type="text/javascript">
   var webAuth = new auth0.WebAuth({
     domain:      'activation-la2050.auth0.com',

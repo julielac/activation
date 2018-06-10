@@ -120,6 +120,10 @@ winners:
   - /live/environment-california-research-policy-center/
 
 
+#auth0_js_url: https://cdn.auth0.com/js/auth0/9.3.1/auth0.min.js
+auth0_js_url: https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js
+
+
 permalink: pretty
 
 version: 1.4.9

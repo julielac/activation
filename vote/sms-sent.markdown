@@ -104,7 +104,7 @@ form input[type="text"] {
 
 </script>
 
-<script src="https://cdn.auth0.com/js/auth0/9.3.1/auth0.min.js"></script>
+<script src="{{ site.auth0_js_url }}"></script>
 
 <script>
   function showSaveMessage(err) {
