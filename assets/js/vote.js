@@ -183,8 +183,8 @@
     }
 
     var webAuth = new auth0.WebAuth({
-      domain:      'activation-la2050.auth0.com',
-      clientID:    'INfJpr4dnNk2EN143utsZYz4Zeq9c7cd',
+      domain: window.AUTH0_DOMAIN,
+      clientID: window.AUTH0_CLIENT_ID,
       // responseMode: 'form_post',
       responseType: 'token',
       redirectUri: redirectUri
@@ -259,8 +259,8 @@
     options.connection = socialNetwork
 
     var webAuth = new auth0.WebAuth({
-      domain:      'activation-la2050.auth0.com',
-      clientID:    'INfJpr4dnNk2EN143utsZYz4Zeq9c7cd',
+      domain: window.AUTH0_DOMAIN,
+      clientID: window.AUTH0_CLIENT_ID,
       responseType: 'token',
       redirectUri: redirectUri
     });

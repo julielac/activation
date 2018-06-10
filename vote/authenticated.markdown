@@ -114,13 +114,17 @@ You may want to visit our [home page](/) instead.
 
 
 <script src="{{ site.auth0_js_url }}"></script>
-<script type="text/javascript">
-  var webAuth = new auth0.WebAuth({
-    domain:      'activation-la2050.auth0.com',
-    clientID:    'INfJpr4dnNk2EN143utsZYz4Zeq9c7cd'
-  })
+<script>
+  window.AUTH0_DOMAIN    = '{{ site.auth0_domain }}',
+  window.AUTH0_CLIENT_ID = '{{ site.auth0_client_id }}'
 </script>
 
+<script>
+  var webAuth = new auth0.WebAuth({
+    domain: window.AUTH0_DOMAIN,
+    clientID: window.AUTH0_CLIENT_ID,
+  })
+</script>
 
 <script>
   function showSaveMessage(err) {

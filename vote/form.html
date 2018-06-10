@@ -222,6 +222,10 @@ stylesheets:
   </script>
 
   <script src="{{ site.auth0_js_url }}"></script>
+  <script>
+    window.AUTH0_DOMAIN    = '{{ site.auth0_domain }}',
+    window.AUTH0_CLIENT_ID = '{{ site.auth0_client_id }}'
+  </script>
   <script async src="/assets/js/vote.js"></script>
   <script async src="/assets/js/scroll-into-view.js"></script>
 

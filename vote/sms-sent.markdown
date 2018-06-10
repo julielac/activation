@@ -105,6 +105,10 @@ form input[type="text"] {
 </script>
 
 <script src="{{ site.auth0_js_url }}"></script>
+<script>
+  window.AUTH0_DOMAIN    = '{{ site.auth0_domain }}',
+  window.AUTH0_CLIENT_ID = '{{ site.auth0_client_id }}'
+</script>
 
 <script>
   function showSaveMessage(err) {
@@ -188,8 +192,8 @@ form input[type="text"] {
     console.log("verificationCode: " + verificationCode)
 
     var webAuth = new auth0.WebAuth({
-      domain:      'activation-la2050.auth0.com',
-      clientID:    'INfJpr4dnNk2EN143utsZYz4Zeq9c7cd',
+      domain: window.AUTH0_DOMAIN,
+      clientID: window.AUTH0_CLIENT_ID,
       // responseMode: 'form_post',
       responseType: 'token',
       redirectUri: redirectUri
@@ -226,7 +230,8 @@ form input[type="text"] {
       webAuth.passwordlessLogin({
           connection: 'sms',
           phoneNumber: telephone.replace(/\-/g, '').replace(/\s/g, ''),
-          verificationCode: verificationCode
+          verificationCode: verificationCode,
+          redirectUri: redirectUri
         }, function (err,res) {
           if (err) {
             // Handle error
