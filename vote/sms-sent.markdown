@@ -39,7 +39,7 @@ We sent you a text message with a verification code. Please enter it here.
 </form>
 
 <h3 style="max-width: none; text-align: center; margin-bottom: 0;" id="headline"></h3>
-<p style="margin-top: 0"><small id="message-details"></small></p>
+<p style="margin-top: 0"><small><span id="message-details"></span> <span id="resend" style="display: none"><a href="#resend">get a new verification code</a>.</span></small></p>
 
 <style>
 .promotion {
@@ -115,7 +115,10 @@ form input[type="text"] {
   function showErrorMessage(message) {
     console.log('showErrorMessage: ' + message)
 
-    if (message === "Wrong phone number or verification code.") message = "That verification code isn’t quite right. Please try entering it again."
+    if (message === "Wrong phone number or verification code.") {
+      message = "That verification code isn’t correct or may have expired. Please try entering it again or"    
+      document.getElementById('resend').style.display = 'inline'
+    }
 
     if (message === "Invalid request body. All and only of client_id, credential_type, username, otp, realm are required.") message = "Please enter the verification code that we sent you."
 
@@ -138,8 +141,8 @@ form input[type="text"] {
   //   }, 5000)
   // }
 
-  function submitVerificationCode(form){
-    console.log('submitVerificationCode');
+  function submit(form, options){
+    console.log('submit form');
 
     var telephone = document.querySelector('input[name="telephone"]').value;
     var verificationCode = document.querySelector('input[name="verification_code"]').value;
@@ -178,7 +181,7 @@ form input[type="text"] {
 
     console.dir(votesData);
 
-    var redirectUri = window.location.origin + '/vote/authenticated/?' + votesData.join('&');
+    var redirectUri = window.location.origin + '/vote/' + (options && options.resend ? 'sms-sent' : 'authenticated') + '/?' + votesData.join('&');
     console.log('redirectUri: ' + redirectUri);
 
     console.log("telephone: " + telephone.replace(/\-/g, '').replace(/\s/g, ''))
@@ -191,10 +194,13 @@ form input[type="text"] {
       responseType: 'token',
       redirectUri: redirectUri
     });
-    webAuth.passwordlessLogin({
+
+    if (options && options.resend) {
+      webAuth.passwordlessStart({
         connection: 'sms',
+        send: 'code',
         phoneNumber: telephone.replace(/\-/g, '').replace(/\s/g, ''),
-        verificationCode: verificationCode
+        redirectUri: redirectUri
       }, function (err,res) {
         if (err) {
           // Handle error
@@ -204,27 +210,59 @@ form input[type="text"] {
           console.log(err)
           console.dir(err)
         } else {
+          form.action = '/vote/sms-sent/';
+          form.method = 'get';
 
           console.log('res');
           console.log(res)
           console.dir(res)
 
-          // form.action = form.action + '?' + votesData.join('&');
-          // form.submit();
-          // document.querySelector('.introduction').style.display = 'block';
-          // document.querySelector('form').style.display = 'none';
+          form.submit();
         }
 
+      });
+    } else {
 
-      }
-    );
+      webAuth.passwordlessLogin({
+          connection: 'sms',
+          phoneNumber: telephone.replace(/\-/g, '').replace(/\s/g, ''),
+          verificationCode: verificationCode
+        }, function (err,res) {
+          if (err) {
+            // Handle error
+            showErrorMessage(err.errorDescription || err.description)
+
+            console.log('err');
+            console.log(err)
+            console.dir(err)
+          } else {
+
+            console.log('res');
+            console.log(res)
+            console.dir(res)
+
+            // form.action = form.action + '?' + votesData.join('&');
+            // form.submit();
+            // document.querySelector('.introduction').style.display = 'block';
+            // document.querySelector('form').style.display = 'none';
+          }
+
+
+        }
+      );
+    }
   }
 
   document.querySelector('form').addEventListener('submit', function(e) {
     e.preventDefault();
-    submitVerificationCode(e.target);
-
+    submit(e.target);
   })
+
+  document.querySelector('a[href="#resend"]').addEventListener('click', function(e) {
+    e.preventDefault();
+    submit(form, { resend: true });
+  })
+
 </script>
 
 {% endif %}

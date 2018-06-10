@@ -1,6 +1,6 @@
 ---
 title: Vote in the 2018 My LA2050 Activation Challenge
-body_class: lime
+body_class: banana
 ---
 
 {% if site.phase != 6 %}
