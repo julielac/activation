@@ -198,5 +198,6 @@ category: live
 uri: /live/united-way-of-greater-los-angeles/
 order: 15
 project_image: united-way-of-greater-los-angeles.jpg
+project_image_color: rgb(30, 90, 138)
 
 ---

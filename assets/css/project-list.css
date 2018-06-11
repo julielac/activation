@@ -605,6 +605,9 @@
       height: 100%;
       max-height: none;
     }
+    .proposals.finalists .image[style*="background-color"] img {
+      object-fit: contain;
+    }
   }
   @media (min-width: 80em) {
 /*    .proposals.finalists {

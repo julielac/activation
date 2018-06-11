@@ -143,7 +143,7 @@ You may want to visit our [home page](/) instead.
     if (message === "Wrong email or verification code.") message = "This email link has expired."
 
     if (message === "No verifier returned from client.") {
-      message = "This error may happen if your browser blocks third party cookies."
+      message = "This error may happen if your web browser blocks third party cookies."
 
       if (document.querySelector('input[name="telephone"]').value &&
           document.querySelector('input[name="telephone"]').value != "") {

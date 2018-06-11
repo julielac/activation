@@ -127,7 +127,7 @@ auth0_client_id: INfJpr4dnNk2EN143utsZYz4Zeq9c7cd
 
 
 # For cache busting
-version: 1.4.9
+version: 1.5.0
 
 
 permalink: pretty
