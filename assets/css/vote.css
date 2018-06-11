@@ -296,7 +296,7 @@
   form .category ul > li label:hover .pseudo-checkbox {
     background: black;
     background: var(--primary-color, black);
-    color: white;
+    color: white !important;
   }
   form .category ul > li label input:focus ~ .call-to-action,
   form .category ul > li label input:focus ~ .pseudo-checkbox {
