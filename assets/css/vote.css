@@ -297,6 +297,8 @@
     background: black;
     background: var(--primary-color, black);
     color: white !important;
+    border-color: black;
+    border-color: var(--primary-color, black);
   }
   form .category ul > li label input:focus ~ .call-to-action,
   form .category ul > li label input:focus ~ .pseudo-checkbox {
