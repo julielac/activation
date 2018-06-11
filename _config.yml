@@ -126,18 +126,27 @@ auth0_domain: activation-la2050.auth0.com
 auth0_client_id: INfJpr4dnNk2EN143utsZYz4Zeq9c7cd
 
 
-permalink: pretty
-
+# For cache busting
 version: 1.4.9
+
+
+permalink: pretty
 
 exclude:
   - CNAME
   - README
+  - Gemfile
+  - Gemfile.lock
   - _node
-  - node_modules
-  - gulpfile.js
-  - package.json
-  - package-lock.json
+  - sitemap.txt
+  - assets/images/learn/original
+  - assets/images/create/original
+  - assets/images/play/original
+  - assets/images/connect/original
+  - assets/images/live/original
+  - assets/images/goals/original
+  - assets/images/home/original
+  - assets/images/vote/original
 
 defaults:
   - scope:

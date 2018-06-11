@@ -19,7 +19,7 @@ You may want to visit our [home page](/) instead.
 
 <h2 style="max-width: none; text-align: center; font-size: 2.5em;" id="headline">It’s time to submit your votes</h2>
 
-<p id="message" style="visibility: hidden">We couldn’t confirm your votes. <a href="{{ site.vote_url }}">Please try again</a>.</p>
+<p id="message" style="visibility: hidden">We couldn’t confirm your votes. <a href="{{ site.vote_url }}">Please try voting again</a>.</p>
 <p><small id="message-details"></small></p>
 
 <form name="vote_authenticated" action="/vote/survey/" method="post" data-netlify="true">
@@ -58,7 +58,7 @@ You may want to visit our [home page](/) instead.
   function getParameterByName(name, url) {
     if (!url) url = window.location.href
     name = name.replace(/[\[\]]/g, "\\$&")
-    let regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
     results = regex.exec(url)
     if (!results) return null
     if (!results[2]) return ''

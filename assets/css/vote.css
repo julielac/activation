@@ -213,13 +213,15 @@
   form h2,
   form h3,
   form h4 {
-    color: var(--primary-color) !important;
+    color: black !important;
+    color: var(--primary-color, black) !important;
     font-weight: bold;
   }
   form strong {
     /*color: rgb(41, 41, 41) !important;*/ /* @midnight */
     /*font-weight: 500;*/
-    color: var(--primary-color) !important;
+    color: black !important;
+    color: var(--primary-color, black) !important;
   }
   form .category ul > li label {
     cursor: pointer;
@@ -261,8 +263,9 @@
     z-index: 1;
     box-sizing: border-box;
     background: white;
-    color: var(--primary-color);
-    border: 0.1875em solid var(--primary-color);
+    color: black !important;
+    color: var(--primary-color, black) !important;
+    border: 0.1875em solid;
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 
     /* OPTIONAL: Align with the outer border */
@@ -290,7 +293,8 @@
   form .category ul > li label input:checked ~ .pseudo-checkbox,
   form .category ul > li label:hover .call-to-action,
   form .category ul > li label:hover .pseudo-checkbox {
-    background: var(--primary-color);
+    background: black;
+    background: var(--primary-color, black);
     color: white;
   }
   form .category ul > li label input:focus ~ .call-to-action,
@@ -594,6 +598,7 @@
   }
   #sign-in-email input:checked ~ .pseudo-checkbox svg {
     color: white !important;
+    background: inherit;
     background: var(--secondary-color, inherit);
     border-color: var(--secondary-color, inherit);
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;
@@ -605,8 +610,9 @@
     outline: 0.375em solid black;
     outline: 0.375em solid var(--secondary-color, black);
     outline: auto 5px -webkit-focus-ring-color;
-    color: var(--secondary-color, inherit) !important;
     background: white;
+    color: black !important;
+    color: var(--secondary-color, black) !important;
     border-color: currentColor;
   }
   #sign-in-email .pseudo-checkbox svg {
@@ -758,6 +764,7 @@
   #finish button:active,
   #finish button:focus {
     background-color: rgb(254, 254, 254); /* @snow */
+    color: black;
     color: var(--secondary-color, black);
   }
 
@@ -869,7 +876,6 @@
     transform: translate(-50%, -50%);
     opacity: 0.75;
     background: rgb(254, 254, 254); /* @snow */
-    border-color: var(--secondary-color, black);
     color: var(--secondary-color, black);
     border-color: var(--primary-color, black);
     border-color: white;
@@ -884,7 +890,8 @@
   .has-icon:hover .icon,
   .has-icon:active .icon,
   .has-icon:focus .icon {
-    background-color: var(--primary-color);
+    background-color: black;
+    background-color: var(--primary-color, black);
     opacity: 1;
   }
 
@@ -908,13 +915,9 @@
     bottom: 0;
     left: 0;
     background: white;
-    background: rgba(255, 255, 255, 0.75);
-    color: black;
-    background: var(--secondary-color, black);
-    color: rgb(254, 254, 254); /* @snow */
-    background: white;
     background: rgba(255, 255, 255, 0.9);
-    color: var(--secondary-color, black);
+
+    border-color: black;
     border-color: var(--secondary-color, black);
     color: black;
     font-size: 0.75em;
