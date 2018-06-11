@@ -103,6 +103,7 @@
         scrollToElement('zip')
         setTimeout(function() {
           document.querySelector('input[name="zip"]').focus()
+          document.querySelector('input[name="zip"]').setAttribute('required', 'required')
         }, 1000)
       }
       // console.log('scrollTo finish done')
@@ -284,14 +285,17 @@
       if (document.querySelectorAll('input[type="radio"]:checked').length >= 1) {
         if (!zipSeen) {
           zip.classList.remove('hidden')
-          zip.setAttribute('required', 'required')
           zipShowing = true
           scrollToElement('zip')
           setTimeout(function() {
             document.querySelector('input[name="zip"]').focus()
+            document.querySelector('input[name="zip"]').setAttribute('required', 'required')
           }, 1000)
           zipSeen = true
           setUpConfirmButton()
+        } else if (emailShowing || phoneShowing) {
+          console.log('form submit');
+          sendEmail(e.target);
         } else if (!finishSeen) {
           finish.classList.remove('hidden')
           finishShowing = true
@@ -303,9 +307,6 @@
           }
           finishSeen = true
           setUpZipButton()
-        } else if (emailShowing || phoneShowing) {
-          console.log('form submit');
-          sendEmail(e.target);
         }
       }
     })
@@ -462,7 +463,7 @@
     finish.classList.add('hidden');
     var zip = document.getElementById('zip');
     zip.classList.add('hidden');
-    zip.removeAttribute('required');
+    document.querySelector('input[name="zip"]').removeAttribute('required');
     updateProgress = function() {
       if (!progress) progress = document.getElementById("progress");
       if (!count) count = document.getElementById("vote-count");
@@ -490,7 +491,6 @@
 
       if (counter >= 1 && !zipShowing) {
         zip.classList.remove('hidden');
-        zip.setAttribute('required', 'required')
         zipShowing = true;
         setUpConfirmButton()
       }
@@ -561,6 +561,8 @@
     }, 1000)
     e.preventDefault();
     emailShowing = true
+
+    document.querySelector('input[name="telephone"]').value = ""
   })
 
   document.querySelector('button[value="facebook"]').addEventListener('click', function(e) {
