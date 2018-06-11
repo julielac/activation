@@ -135,29 +135,31 @@ You may want to visit our [home page](/) instead.
   function showErrorMessage(message) {
     console.log('showErrorMessage')
 
+    document.getElementById('headline').textContent      = 'Oops! Something went wrong'
+    document.getElementById('message').style.visibility = 'visible'
+
     if (message === "`state` does not match.") message = "This error may happen if you switch to a different phone, computer, or web browser during the sign in process."
 
     if (message === "Wrong email or verification code.") message = "This email link has expired."
 
-    if (message === "No verifier returned from client.") message = "This error may happen if your browser blocks third party cookies."
+    if (message === "No verifier returned from client.") {
+      message = "This error may happen if your browser blocks third party cookies."
 
-    if (message === "No verifier returned from client." &&
-          document.querySelector('input[name="telephone"]').value &&
+      if (document.querySelector('input[name="telephone"]').value &&
           document.querySelector('input[name="telephone"]').value != "") {
-      document.querySelector("#message a").addEventListener('click', function(e) {
-        if (window.resendSMS) {
-          window.resendSMS()
-          e.preventDefault()
-        }
-      })
+        document.querySelector("#message a").addEventListener('click', function(e) {
+          if (window.resendSMS) {
+            window.resendSMS()
+            e.preventDefault()
+          }
+        })
+      }
     }
 
-    document.getElementById('headline').textContent      = 'Oops! Something went wrong'
-    document.getElementById('message').style.visibility = 'visible'
     document.getElementById('message-details').textContent = message
 
-    form.action = '/vote/form/'
-    form.method = 'get'
+    // form.action = '/vote/form/'
+    // form.method = 'get'
     // button.style.visibility = 'visible'
     // button.textContent = 'Start over'
 
