@@ -7,7 +7,7 @@ layout: null
 
   <!-- https://auth0.com/docs/cross-origin-authentication -->
 
-  <script src="https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js"></script>
+  <script src="{{ site.auth0_js_url }}"></script>
   <script>
     window.AUTH0_DOMAIN    = '{{ site.auth0_domain }}',
     window.AUTH0_CLIENT_ID = '{{ site.auth0_client_id }}'
@@ -15,8 +15,7 @@ layout: null
   <script>
     var auth0 = new auth0.WebAuth({
       domain: window.AUTH0_DOMAIN,
-      clientID: window.AUTH0_CLIENT_ID,
-      redirectUri: window.location.origin + '/vote/authenticated/'
+      clientID: window.AUTH0_CLIENT_ID
     });
     auth0.crossOriginVerification();
   </script>

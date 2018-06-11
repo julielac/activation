@@ -19,7 +19,7 @@ You may want to visit our [home page](/) instead.
 
 <h2 style="max-width: none; text-align: center; font-size: 2.5em;" id="headline">It’s time to submit your votes</h2>
 
-<p id="message" style="visibility: hidden">We couldn’t confirm your votes. <a href="{{ site.vote_url }}">Please try voting again</a>.</p>
+<p id="message" style="visibility: hidden">We couldn’t confirm your votes. <a href="{{ site.vote_url }}">Please try again</a>.</p>
 <p><small id="message-details"></small></p>
 
 <form name="vote_authenticated" action="/vote/survey/" method="post" data-netlify="true">
@@ -139,6 +139,19 @@ You may want to visit our [home page](/) instead.
 
     if (message === "Wrong email or verification code.") message = "This email link has expired."
 
+    if (message === "No verifier returned from client.") message = "This error may happen if your browser blocks third party cookies."
+
+    if (message === "No verifier returned from client." &&
+          document.querySelector('input[name="telephone"]').value &&
+          document.querySelector('input[name="telephone"]').value != "") {
+      document.querySelector("#message a").addEventListener('click', function(e) {
+        if (window.resendSMS) {
+          window.resendSMS()
+          e.preventDefault()
+        }
+      })
+    }
+
     document.getElementById('headline').textContent      = 'Oops! Something went wrong'
     document.getElementById('message').style.visibility = 'visible'
     document.getElementById('message-details').textContent = message
@@ -213,6 +226,80 @@ You may want to visit our [home page](/) instead.
     })
   } else {
     showErrorMessage('The sign in process couldn’t start.')
+  }
+</script>
+
+<script>
+  function resendSMS(){
+    console.log('resendSMS form');
+
+    var telephone = document.querySelector('input[name="telephone"]').value;
+
+    var fieldNames = ['learn', 'create', 'play', 'connect', 'live'];
+    var votesData = [];
+    var nextField;
+    for (var index = 0; index < fieldNames.length; index++) {
+      nextField = form.querySelector('input[name="' + fieldNames[index] + '"]');
+      if (nextField) {
+        votesData.push(fieldNames[index] + '=' + encodeURIComponent(nextField.value));
+      } else {
+        console.log('skipped: ' + fieldNames[index]);
+      }
+    }
+
+    if ((votesData).length < 1) {
+      console.error('No items were voted for');
+      return;
+    }
+
+    var zip = document.querySelector('input[name="zip"]').value;
+    if (!zip || zip == '') {
+      console.log('No zip code')
+    }
+
+    votesData.push('zip=' + encodeURIComponent(zip));
+
+    votesData.push('telephone=' + encodeURIComponent(telephone));
+
+    console.dir(votesData);
+
+    var redirectUri = window.location.origin + '/vote/authenticated/?' + votesData.join('&');
+    console.log('redirectUri: ' + redirectUri);
+
+    console.log("telephone: " + telephone.replace(/\-/g, '').replace(/\s/g, ''))
+
+    var webAuth = new auth0.WebAuth({
+      domain: window.AUTH0_DOMAIN,
+      clientID: window.AUTH0_CLIENT_ID,
+      // responseMode: 'form_post',
+      responseType: 'token'
+    });
+
+    webAuth.passwordlessStart({
+      connection: 'sms',
+      send: 'code',
+      phoneNumber: telephone.replace(/\-/g, '').replace(/\s/g, ''),
+      redirectUri: redirectUri
+    }, function (err,res) {
+      if (err) {
+        // Handle error
+        showErrorMessage(err.errorDescription || err.description)
+
+        console.log('err');
+        console.log(err)
+        console.dir(err)
+      } else {
+        form.action = '/vote/sms-sent/';
+        form.method = 'get';
+
+        console.log('res');
+        console.log(res)
+        console.dir(res)
+
+        form.submit();
+      }
+
+    });
   }
 </script>
 
