@@ -59,10 +59,17 @@ You may want to visit our [home page](/) instead.
         <option>News outlet</option>
         <option>Advertisements</option>
         <option>Events</option>
-        <option>Other</option>
       </select>
     </label>
+    <br />
+    <br />
+    <label>
+      Other (specify)<br />
+      <input type="text" name="how_you_found_la2050" />
+    </label>
   </p>
+
+
 
   <p>
     <label>
@@ -74,8 +81,13 @@ You may want to visit our [home page](/) instead.
         <option>Competition / competitor team updates</option>
         <option>Jobs and events</option>
         <option>Important news from the world of impact</option>
-        <option>Other</option>
       </select>
+    </label>
+    <br />
+    <br />
+    <label>
+      Other (specify)<br />
+      <input type="text" name="how_you_found_la2050" />
     </label>
   </p>
 
