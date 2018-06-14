@@ -111,8 +111,8 @@ You may want to visit our [home page](/) instead.
 
   <p>
     <label>
-      How would you describe yourself? <small>(Select all that apply)</small><br />
-      <select name="race" multiple="multiple">
+      How would you describe yourself?<br />
+      <select name="race">
         <option>American Indian or Alaska Native</option>
         <option>Asian</option>
         <option>Biracial / mixed race</option>
