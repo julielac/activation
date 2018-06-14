@@ -182,6 +182,14 @@
   hr {
     visibility: hidden;
   }
+
+  /* OPTIONAL: Use less space between questions */
+  @media (min-width: 40em) { /* @medium-size-screen */
+    .category + .category {
+      margin-top: -3em;
+    }
+  }
+
   form {
     text-align: center;
   }
@@ -455,6 +463,14 @@
     box-shadow: 0 0 1px rgba(0, 0, 0, 1);
     flex-grow: 1;
   }
+
+  /* OPTIONAL: Move items closer together, if at least three can fit across*/
+  @media (min-width: 92.5em) {
+    form .category ul > li {
+      margin: 1.5em;
+    }
+  }
+
   /*
   form .category ul > li a {
     position: absolute;

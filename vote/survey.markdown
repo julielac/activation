@@ -28,7 +28,144 @@ You may want to visit our [home page](/) instead.
 
   <p>
     <label>
-      What language do you speak at home?<br />
+      Which of the following news sources do you view on a regular basis?<br />
+      <select name="news_source">
+        <option value="">Select</option>
+        <option value="">-----------------</option>
+        <option>Traditional print newspapers and magazines (e.g. LA Times)</option>
+        <option>Traditional online media outlets (e.g. CNN)</option>
+        <option>Online-only media outlets (e.g. Huffington Post)</option>
+        <option>Social media platforms</option>
+        <option>Online blogs/forums</option>
+        <option>Television</option>
+        <option>Radio</option>
+        <option>Community groups or organizations</option>
+      </select>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      How did you first find out about the My LA2050 Activation Challenge?<br />
+      <select name="how_you_found_la2050">
+        <option value="">Select</option>
+        <option value="">-----------------</option>
+        <option>LA2050 Newsletter</option>
+        <option>Community group or organization</option>
+        <option>Friends or family</option>
+        <option>Professional network</option>
+        <option>Social media</option>
+        <option>News outlet</option>
+        <option>Advertisements</option>
+        <option>Events</option>
+        <option>Other (specify)</option>
+      </select>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      What would you most like to hear about from LA2050?<br />
+      <select name="what_you_want_from_la2050">
+        <option value="">Select</option>
+        <option value="">-----------------</option>
+        <option>New funding opportunities</option>
+        <option>Competition / competitor team updates</option>
+        <option>Jobs and events</option>
+        <option>Important news from the world of impact</option>
+        <option>Other</option>
+      </select>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      How old are you?<br />
+      <select name="age">
+        <option value="">Select</option>
+        <option value="">-----------------</option>
+        <option>Under 18</option>
+        <option>18-29</option>
+        <option>30-39</option>
+        <option>40-49</option>
+        <option>50-64</option>
+        <option>65 and above</option>
+        <option>Prefer not to answer</option>
+      </select>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Are you …?<br />
+      <select name="gender">
+        <option value="">Select</option>
+        <option value="">-----------------</option>
+        <option>Female</option>
+        <option>Male</option>
+        <option>Non-binary, transgender, prefer to self-describe</option>
+        <option>Prefer not to answer</option>
+      </select>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      How would you describe yourself? <small>(Select all that apply)</small><br />
+      <select name="race" multiple="multiple">
+        <option>American Indian or Alaska Native</option>
+        <option>Asian</option>
+        <option>Biracial / mixed race</option>
+        <option>Black or African American</option>
+        <option>Hawaiian Native or Other Pacific Islander</option>
+        <option>Hispanic or Latino</option>
+        <option>White</option>
+        <option>Prefer not to answer</option>
+      </select>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      What is the highest level of education you received?<br />
+      <select name="education">
+        <option value="">Select</option>
+        <option value="">-----------------</option>
+        <option>Some high school</option>
+        <option>High school graduate or diploma equivalent (for example: GED)</option>
+        <option>Some college credit, no degree</option>
+        <option>Trade / technical / vocational training</option>
+        <option>Associate degree</option>
+        <option>Bachelor’s degree</option>
+        <option>Master’s degree</option>
+        <option>Professional degree</option>
+        <option>Doctorate degree</option>
+        <option>Prefer not to answer</option>
+      </select>
+    </label>
+  </p>
+
+  <p>
+    <label name="income">
+      Where does the total annual income of your household fall before taxes and including all sources?<br />
+      <select name="income">
+        <option value="">Select</option>
+        <option value="">-----------------</option>
+        <option>Less than $35,000</option>
+        <option>$35,000 - $49,999</option>
+        <option>$50,000 - $74,999</option>
+        <option>$75,000-$99,999</option>
+        <option>$100,000 - $149,999</option>
+        <option>$150,000 - $199,999</option>
+        <option>$200,000 or more</option>
+        <option>Prefer not to answer</option>
+      </select>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      What language to do you speak <em style="color: inherit;">most</em> when you’re at home? <br />
       <input type="text" name="language" placeholder="हिन्दी, 日本語, English, Español, ไทย" />
     </label>
   </p>
@@ -46,131 +183,6 @@ You may want to visit our [home page](/) instead.
     document.querySelector('input[name="language"]').placeholder = languages.join(', ')
   })();
   </script>
-
-  <p>
-    <label>
-      Where do you get the majority of your news?<br />
-      <select name="news_source">
-        <option value="">Select</option>
-        <option value="">-----------------</option>
-        <option>Traditional print newspapers and magazines (e.g. LA Times)</option>
-        <option>Traditional online media outlets (e.g. CNN)</option>
-        <option>Online-only media outlets</option>
-        <option>Social media platforms</option>
-        <option>Online blogs/forums</option>
-        <option>Television</option>
-        <option>Radio</option>
-        <option>Information shared by friends or family</option>
-        <option>Community groups or organizations</option>
-        <option>I’d rather not say</option>
-      </select>
-    </label>
-  </p>
-
-  <p>
-    <label>
-      How did you find out about LA2050?<br />
-      <select name="how_you_found_la2050">
-        <option value="">Select</option>
-        <option value="">-----------------</option>
-        <option>LA2050 Newsletter</option>
-        <option>Community group or organization</option>
-        <option>Friends or family</option>
-        <option>Professional network</option>
-        <option>Social media</option>
-        <option>News outlet</option>
-        <option>Advertisements</option>
-        <option>Other</option>
-        <option>I’d rather not say</option>
-      </select>
-    </label>
-  </p>
-
-  <p>
-    <label>
-      Which gender do you most strongly identify with?<br />
-      <select name="gender">
-        <option value="">Select</option>
-        <option value="">-----------------</option>
-        <option>Male</option>
-        <option>Female</option>
-        <option>Other</option>
-        <option>I’d rather not say</option>
-      </select>
-    </label>
-  </p>
-
-  <p>
-    <label>
-      Which ethnic or racial group do you most strongly identify with?<br />
-      <select name="race">
-        <option value="">Select</option>
-        <option value="">-----------------</option>
-        <option>Native American or Alaskan Native</option>
-        <option>Asian</option>
-        <option>Black or African-American</option>
-        <option>Hispanic or Latino</option>
-        <option>Middle Eastern or North African</option>
-        <option>Native Hawaiian or Pacific Islander</option>
-        <option>White</option>
-        <option>Other</option>
-        <option>I’d rather not say</option>
-      </select>
-    </label>
-  </p>
-
-  <p>
-    <label>
-      What is the highest education level you have attained?<br />
-      <select name="education">
-        <option value="">Select</option>
-        <option value="">-----------------</option>
-        <option>Grade school</option>
-        <option>High school</option>
-        <option>Associates</option>
-        <option>Bachelors</option>
-        <option>Advanced Degree</option>
-        <option>I’d rather not say</option>
-      </select>
-    </label>
-  </p>
-
-  <p>
-    <label name="income">
-      What is your annual income range?<br />
-      <select name="income">
-        <option value="">Select</option>
-        <option value="">-----------------</option>
-        <option>Less than $25,000</option>
-        <option>$25,000 to $34,999</option>
-        <option>$35,000 to $49,999</option>
-        <option>$50,000 to $74,999</option>
-        <option>$75,000 to $99,999</option>
-        <option>$100,000 to $149,999</option>
-        <option>$150,000 to $199,999</option>
-        <option>$200,000 or more</option>
-        <option>I’d rather not say</option>
-      </select>
-    </label>
-  </p>
-
-  <p>
-    <label>
-      What is your age range?<br />
-      <select name="age">
-        <option value="">Select</option>
-        <option value="">-----------------</option>
-        <option>14-17</option>
-        <option>18-25</option>
-        <option>26-34</option>
-        <option>35-44</option>
-        <option>45-54</option>
-        <option>55-64</option>
-        <option>65 and up</option>
-        <option>I’d rather not say</option>
-      </select>
-    </label>
-  </p>
 
   <p class="action">
     <button type="submit">Submit</button>
@@ -229,6 +241,7 @@ form button {
   width: 100%;
   max-width: 20em;
 }
+form select[multiple],
 form input[type="text"],
 form input[type="number"] {
   font-family: inherit;
@@ -243,12 +256,16 @@ form input[type="number"] {
   border: 0.1875em solid rgb(237, 59, 136); /* @strawberry */
   border-color: rgba(0, 0, 0, 0.25);
   width: 100%;
-  max-width: 20em;
+  max-width: 40em;
 
   /* Remove Safari’s default styles for search fields */
   -webkit-appearance: none;
 
   text-align: left;
+}
+form select[multiple] {
+  min-height: 12.5em;
+  font-weight: normal;
 }
 </style>
 
