@@ -64,7 +64,7 @@ You may want to visit our [home page](/) instead.
     <br />
     <br />
     <label>
-      Other (specify)<br />
+      Other <small>(please describe)</small><br />
       <input type="text" name="how_you_found_la2050" />
     </label>
   </p>
@@ -86,7 +86,7 @@ You may want to visit our [home page](/) instead.
     <br />
     <br />
     <label>
-      Other (specify)<br />
+      Other <small>(please describe)</small><br />
       <input type="text" name="how_you_found_la2050" />
     </label>
   </p>
@@ -181,8 +181,10 @@ You may want to visit our [home page](/) instead.
   <p>
     <label>
       What language to do you speak <em style="color: inherit;">most</em> when you’re at home? <br />
-      <input type="text" name="language" placeholder="हिन्दी, 日本語, English, Español, ไทย" />
+      <input type="text" name="language" placeholder="" />
     </label>
+    <br />
+    <small>हिन्दी, 日本語, English, Español, ไทย</small>
   </p>
   <script>
   (function() {
