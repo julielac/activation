@@ -24,7 +24,7 @@ You may want to visit our [home page](/) instead.
 
 </div>
 
-<form name="vote_survey" action="/vote/confirmation/" method="post" data-netlify="true">
+<form name="vote_survey" action="/vote/confirmation-survey/" method="post" data-netlify="true">
 
   <p>
     <label>
