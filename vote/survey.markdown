@@ -59,13 +59,14 @@ You may want to visit our [home page](/) instead.
         <option>News outlet</option>
         <option>Advertisements</option>
         <option>Events</option>
+        <option value="Other">Other (please describe)</option>
       </select>
     </label>
     <br />
     <br />
     <label>
       Other <small>(please describe)</small><br />
-      <input type="text" name="how_you_found_la2050" />
+      <input type="text" name="how_you_found_la2050_other" />
     </label>
   </p>
 
@@ -81,13 +82,14 @@ You may want to visit our [home page](/) instead.
         <option>Competition / competitor team updates</option>
         <option>Jobs and events</option>
         <option>Important news from the world of impact</option>
+        <option value="Other">Other (please describe)</option>
       </select>
     </label>
     <br />
     <br />
     <label>
       Other <small>(please describe)</small><br />
-      <input type="text" name="how_you_found_la2050" />
+      <input type="text" name="what_you_want_from_la2050_other" />
     </label>
   </p>
 
@@ -181,15 +183,15 @@ You may want to visit our [home page](/) instead.
   <p>
     <label>
       What language to do you speak <em style="color: inherit;">most</em> when you’re at home? <br />
-      <input type="text" name="language" placeholder="" />
+      <input type="text" name="language" />
     </label>
     <br />
-    <small>हिन्दी, 日本語, English, Español, ไทย</small>
+    <small id="languages">हिन्दी, 日本語, English, Español, ไทย</small>
   </p>
   <script>
   (function() {
     //var languages = "हिन्दी, 中文, Français, 한국어, Deutsche, English, Español, ไทย, 日本語, فارسی, Tiếng Việt, ລາວ, Samala, עִברִית, አማርኛ, 中文".split(', ')
-    var languages = document.querySelector('input[name="language"]').placeholder.split(', ')
+    var languages = document.getElementById('languages').textContent.split(', ')
 
     languages.sort(function(a, b) {
       var random = Math.floor(Math.random() * languages.length) + 1;
@@ -197,7 +199,7 @@ You may want to visit our [home page](/) instead.
       else if (random < (languages.length / 2)) return -1;
       return 0;
     })
-    document.querySelector('input[name="language"]').placeholder = languages.join(', ')
+    document.getElementById('languages').textContent = languages.join(', ')
   })();
   </script>
 
