@@ -113,6 +113,8 @@ You may want to visit our [home page](/) instead.
     <label>
       How would you describe yourself?<br />
       <select name="race">
+        <option value="">Select</option>
+        <option value="">-----------------</option>
         <option>American Indian or Alaska Native</option>
         <option>Asian</option>
         <option>Biracial / mixed race</option>
