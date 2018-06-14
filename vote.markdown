@@ -64,7 +64,7 @@ The winners have been announced!
 
 The 5 activations that receive the most votes will be announced as the winners.
 
-The finalists will represent a diverse set of issues, engagement strategies, and activation goals. Finalists will be selected using the following criteria:
+The finalists represent a diverse set of issues, engagement strategies, and activation goals. Finalists were selected using the following criteria:
 
 * Impact on the [LA2050 goals and metrics](/about/#goals)
 * Overall quality of the application
