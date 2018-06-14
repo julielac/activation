@@ -241,7 +241,6 @@ form button {
   width: 100%;
   max-width: 20em;
 }
-form select[multiple],
 form input[type="text"],
 form input[type="number"] {
   font-family: inherit;
@@ -256,16 +255,12 @@ form input[type="number"] {
   border: 0.1875em solid rgb(237, 59, 136); /* @strawberry */
   border-color: rgba(0, 0, 0, 0.25);
   width: 100%;
-  max-width: 40em;
+  max-width: 20em;
 
   /* Remove Safari’s default styles for search fields */
   -webkit-appearance: none;
 
   text-align: left;
-}
-form select[multiple] {
-  min-height: 12.5em;
-  font-weight: normal;
 }
 </style>
 
