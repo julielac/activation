@@ -149,7 +149,12 @@
 
     votesData.push('subscribe_email_list=' + encodeURIComponent(subscribe_email_list));
 
-    if (telephone && telephone.indexOf('+') !== 0) telephone = '+1 ' + telephone
+    if (telephone && telephone.indexOf('1') === 0 && telephone.length === 11) {
+      telephone = '+'  + telephone
+    }
+    if (telephone && telephone.indexOf('+') !== 0) {
+      telephone = '+1' + telephone
+    }
 
     if (telephone) {
       votesData.push('telephone=' + encodeURIComponent(telephone));

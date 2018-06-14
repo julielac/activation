@@ -44,6 +44,7 @@ You may want to visit our [home page](/) instead.
     </label>
   </p>
 
+
   <p>
     <label>
       How did you first find out about the My LA2050 Activation Challenge?<br />

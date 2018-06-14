@@ -144,16 +144,19 @@ You may want to visit our [home page](/) instead.
 
     if (message === "No verifier returned from client.") {
       message = "This error may happen if your web browser blocks third party cookies."
+    }
 
-      if (document.querySelector('input[name="telephone"]').value &&
-          document.querySelector('input[name="telephone"]').value != "") {
-        document.querySelector("#message a").addEventListener('click', function(e) {
-          if (window.resendSMS) {
-            window.resendSMS()
-            e.preventDefault()
-          }
-        })
-      }
+    var emailPresent = (document.querySelector('input[name="email"]').value &&
+                        document.querySelector('input[name="email"]').value != "")
+    var phonePresent = (document.querySelector('input[name="telephone"]').value &&
+                        document.querySelector('input[name="telephone"]').value != "")
+
+    if (emailPresent || phonePresent) {
+      document.querySelector("#message a").addEventListener('click', function(e) {
+        if (window.retrySignIn) {
+          window.retrySignIn(e)
+        }
+      })
     }
 
     document.getElementById('message-details').textContent = message
@@ -232,10 +235,13 @@ You may want to visit our [home page](/) instead.
 </script>
 
 <script>
-  function resendSMS(){
-    console.log('resendSMS form');
+  function retrySignIn(e){
+    console.log('retrySignIn form');
 
-    var telephone = document.querySelector('input[name="telephone"]').value;
+    var email = (form.querySelector('input[name="email"]')) ? 
+      form.querySelector('input[name="email"]').value     : null;
+    var telephone = (form.querySelector('input[name="telephone"]')) ? 
+      form.querySelector('input[name="telephone"]').value : null;
 
     var fieldNames = ['learn', 'create', 'play', 'connect', 'live'];
     var votesData = [];
@@ -261,28 +267,51 @@ You may want to visit our [home page](/) instead.
 
     votesData.push('zip=' + encodeURIComponent(zip));
 
-    votesData.push('telephone=' + encodeURIComponent(telephone));
+    var subscribe_email_list = document.querySelector('input[name="subscribe_email_list"]').value;
+
+    votesData.push('subscribe_email_list=' + encodeURIComponent(subscribe_email_list));
+
+    if (telephone) {
+      votesData.push('telephone=' + encodeURIComponent(telephone));
+    } else if (email) {
+      votesData.push('email=' + encodeURIComponent(email));
+    } else {
+      console.error('Couldn’t find an email or phone to add to the data');
+      return;
+    }
 
     console.dir(votesData);
 
     var redirectUri = window.location.origin + '/vote/authenticated/?' + votesData.join('&');
     console.log('redirectUri: ' + redirectUri);
 
+    var options = {
+      redirectUri: redirectUri,
+    }
+
     console.log("telephone: " + telephone.replace(/\-/g, '').replace(/\s/g, ''))
+
+    if (telephone) {
+      options.connection = 'sms'
+      options.send = 'code'
+      options.phoneNumber = telephone.replace(/\-/g, '').replace(/\s/g, '')
+    } else if (email) {
+      options.connection = 'email'
+      options.send = 'link'
+      options.email = email
+    } else {
+      console.error('Couldn’t find an email or phone to authenticate');
+    }
 
     var webAuth = new auth0.WebAuth({
       domain: window.AUTH0_DOMAIN,
       clientID: window.AUTH0_CLIENT_ID,
       // responseMode: 'form_post',
-      responseType: 'token'
+      responseType: 'token',
+      redirectUri: redirectUri
     });
 
-    webAuth.passwordlessStart({
-      connection: 'sms',
-      send: 'code',
-      phoneNumber: telephone.replace(/\-/g, '').replace(/\s/g, ''),
-      redirectUri: redirectUri
-    }, function (err,res) {
+    webAuth.passwordlessStart(options, function (err,res) {
       if (err) {
         // Handle error
         showErrorMessage(err.errorDescription || err.description)
@@ -291,8 +320,14 @@ You may want to visit our [home page](/) instead.
         console.log(err)
         console.dir(err)
       } else {
-        form.action = '/vote/sms-sent/';
-        form.method = 'get';
+
+        if (telephone) {
+          form.action = '/vote/sms-sent/';
+          form.method = 'get';
+        } else if (email) {
+          form.action = '/vote/email-sent/';
+          form.method = 'get';
+        }
 
         console.log('res');
         console.log(res)
@@ -302,6 +337,8 @@ You may want to visit our [home page](/) instead.
       }
 
     });
+
+    e.preventDefault()
   }
 </script>
 
