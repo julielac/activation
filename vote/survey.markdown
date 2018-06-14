@@ -58,7 +58,7 @@ You may want to visit our [home page](/) instead.
         <option>News outlet</option>
         <option>Advertisements</option>
         <option>Events</option>
-        <option>Other (specify)</option>
+        <option>Other</option>
       </select>
     </label>
   </p>
