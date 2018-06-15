@@ -153,6 +153,5 @@ category: live
 uri: /live/move-la-a-project-of-community-partners/
 order: 39
 project_image: move-la-a-project-of-community-partners.jpg
-project_image_color: rgb(35, 62, 106)
 
 ---
