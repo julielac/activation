@@ -3,7 +3,7 @@ title: Vote in the 2018 My LA2050 Activation Challenge
 body_class: lime
 ---
 
-{% if site.phase != 6 %}
+{% if site.phase != 6 and site.test_voting_pages != true %}
 
 # Oops!
 

@@ -31,9 +31,13 @@
   .promotion .icon,
   .promotion strong,
   .promotion a {
-    color: var(--primary-color);
     color: inherit;
     font-weight: 600;
+  }
+  .promotion a:hover,
+  .promotion a:active,
+  .promotion a:focus {
+    color: var(--primary-color, inherit);
   }
   .promotion h1,
   .promotion p {
@@ -128,7 +132,12 @@
     .home .promotion strong,
     .home .promotion a {
       color: inherit;
-    } 
+    }
+    .home .promotion a:hover,
+    .home .promotion a:active,
+    .home .promotion a:focus {
+      color: rgb(46, 219, 228); /* @bright-blueberry */
+    }
     .promotion .action {
       display: inline-block;
       margin-top: -1.25em;

@@ -89,6 +89,8 @@
 
   {% if page.project_image and page.project_image != '' and page.category and page.category != '' %}
   <meta property="og:image" content="https://activation.la2050.org/assets/images/{{ page.category }}/2048-wide/{{ page.project_image }}" />
+  {% elsif page.image %}
+  <meta property="og:image" content="{{ page.image }}" />
   {% elsif site.image %}
   <meta property="og:image" content="{{ site.image }}" />
   {% endif %}

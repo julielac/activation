@@ -89,19 +89,19 @@
 
 {% if page.finalists %}
   {% if site.phase == 5 %}
-  <p class="count" style="margin-top: 3em; margin-left: auto; margin-right: auto; margin-bottom: 4.5em;"><a href="/vote/" style="color: inherit; font-weight: inherit;">Vote for one of these <strong style="color: inherit; font-weight: inherit;">5</strong> entries</a> in the <strong style="color: var(--primary-color, inherit); text-transform: uppercase;">{{ page.category }}</strong> category, starting June 19, 2018.</p>
+  <p class="count"><a href="/vote/">Vote for one of these <strong>5</strong> entries</a> in the <strong class="category">{{ page.category }}</strong> category, starting June 19, 2018.</p>
   {% elsif site.phase == 6 %}
-  <p class="count" style="margin-top: 3em; margin-left: auto; margin-right: auto; margin-bottom: 4.5em;"><a href="{{ site.vote_url }}" style="color: inherit; font-weight: inherit;">Vote for one of these <strong style="color: inherit; font-weight: inherit;">5</strong> entries</a> in the <strong style="color: var(--primary-color, inherit); text-transform: uppercase;">{{ page.category }}</strong> category, by June 29, 2018.</p>
+  <p class="count"><a href="{{ site.vote_url }}">Vote for one of these <strong>5</strong> entries</a> in the <strong class="category">{{ page.category }}</strong> category, by June 29, 2018.</p>
   {% else %}
-  <p class="count" style="margin-top: 3em; margin-left: auto; margin-right: auto; margin-bottom: 4.5em;">There are <strong style="color: var(--primary-color, inherit)">5</strong> finalists in the <strong style="color: var(--primary-color, inherit); text-transform: uppercase;">{{ page.category }}</strong> category.</p>
+  <p class="count">There are <strong>5</strong> finalists in the <strong class="category">{{ page.category }}</strong> category.</p>
   {% endif %}
 {% else %}
-<p class="count" style="margin-top: 3em; margin-left: auto; margin-right: auto; margin-bottom: 4.5em;">There are <strong style="color: var(--primary-color, inherit)">{{ data_list.size }}</strong> entries in the <strong style="color: var(--primary-color, inherit); text-transform: uppercase;">{{ page.category }}</strong> category.</p>
+<p class="count">There are <strong>{{ data_list.size }}</strong> entries in the <strong class="category">{{ page.category }}</strong> category.</p>
 {% endif %}
-
+  
 {% elsif page.is_search_results %}
 
-<p class="count" style="margin-top: 3em; margin-left: auto; margin-right: auto; margin-bottom: 4.5em;">You searched for <strong style="color: var(--primary-color, inherit)" id="keywords"></strong>. There <span id="project-count-are-is">are</span> <strong style="color: var(--primary-color, inherit)" id="project-count">{{ data_list.size }}</strong> matching <span id="project-count-projects">projects</span> in all categories.</p>
+<p class="count">You searched for <strong id="keywords"></strong>. There <span id="project-count-are-is">are</span> <strong id="project-count">{{ data_list.size }}</strong> matching <span id="project-count-projects">projects</span> in all categories.</p>
 
 {% endif %}
 

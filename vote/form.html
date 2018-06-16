@@ -1,17 +1,34 @@
 ---
 title: Vote in the 2018 My LA2050 Activation Challenge
 body_class: blueberry
+image: https://activation.la2050.org/assets/images/vote/2048-wide/background.jpg
 stylesheets:
   - "/assets/css/vote.css"
 ---
 
-{% if site.phase != 6 %}
+{% if site.phase < 6 and site.test_voting_pages != true %}
 
-  <h1>Oops!</h1>
+  <div class="introduction introduction-voting">
+    <div>
+      <a href="/" class="logo">
+        {% include logo.html %}
+      </a>
+      <p>Voting begins on June 19, 2018 (9am Pacific Time).</p>
+      <p class="action"><a href="{{ site.mailing_list_url }}">Get updates</a></p>
+    </div>
+  </div>
 
-  <p>This page couldn’t be found.</p>
+{% elsif site.phase > 6 and site.test_voting_pages != true %}
 
-  <p>You may want to visit our <a href="/">home page</a> instead.</p>
+  <div class="introduction introduction-voting">
+    <div>
+      <a href="/" class="logo">
+        {% include logo.html %}
+      </a>
+      <p>Public voting is complete.</p>
+      <p class="action"><a href="{{ site.mailing_list_url }}">Get updates</a></p>
+    </div>
+  </div>
 
 {% else %}
 

@@ -126,6 +126,9 @@ auth0_domain: activation-la2050.auth0.com
 auth0_client_id: INfJpr4dnNk2EN143utsZYz4Zeq9c7cd
 
 
+test_voting_pages: false
+
+
 # For cache busting
 version: 1.5.0
 
