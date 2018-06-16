@@ -33,10 +33,10 @@ Your votes have been received, and will help us choose the winners.
 
 <ul class="action">
   <li>
-    <a href="{{ site.mailing_list_url }}">Email</a>
+    <a href="{{ site.mailing_list_url }}" target="_blank" rel="noopener">Email</a>
   </li>
   <li>
-    <a href="https://twitter.com/LA2050">
+    <a href="https://twitter.com/LA2050" target="_blank" rel="noopener">
       <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
         <title>Twitter</title>
         <switch>
@@ -47,7 +47,7 @@ Your votes have been received, and will help us choose the winners.
     </a>
   </li>
   <li>
-    <a href="https://instagram.com/la2050">
+    <a href="https://instagram.com/la2050" target="_blank" rel="noopener">
       <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
         <title>Instagram</title>
         <switch>
@@ -58,7 +58,7 @@ Your votes have been received, and will help us choose the winners.
     </a>
   </li>
   <li>
-    <a href="https://www.facebook.com/LA2050">
+    <a href="https://www.facebook.com/LA2050" target="_blank" rel="noopener">
       <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 512">
         <title>Facebook</title>
         <switch>
