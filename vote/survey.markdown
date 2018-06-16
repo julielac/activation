@@ -266,12 +266,12 @@ form input[type="number"] {
   font-size: inherit;
   line-height: inherit;
   font-weight: 600;
-  padding: 0.75em;
+  padding: 0.375em 0.75em;
   border-radius: 0;
   max-width: none;
   box-sizing: border-box;
   text-align: center;
-  border: 0.1875em solid rgb(237, 59, 136); /* @strawberry */
+  border: 1px solid rgb(237, 59, 136); /* @strawberry */
   border-color: rgba(0, 0, 0, 0.25);
   width: 100%;
   max-width: 20em;
