@@ -145,9 +145,11 @@
 
     votesData.push('zip=' + encodeURIComponent(zip));
 
-    var subscribe_email_list = document.querySelector('input[name="subscribe_email_list"]').value;
-
-    votesData.push('subscribe_email_list=' + encodeURIComponent(subscribe_email_list));
+    var subscribe_email_list;
+    if (document.querySelector('input[name="subscribe_email_list"]').checked) {
+      subscribe_email_list = document.querySelector('input[name="subscribe_email_list"]').value;
+      votesData.push('subscribe_email_list=' + encodeURIComponent(subscribe_email_list));
+    }
 
     if (telephone && telephone.indexOf('1') === 0 && telephone.length === 11) {
       telephone = '+'  + telephone
