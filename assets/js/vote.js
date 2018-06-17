@@ -111,8 +111,11 @@
 
 
 
-  function sendEmail(form){
+  function sendEmail(e) {
     console.log('sendEmail');
+
+    var form = e.target
+    if (!form) return
 
     var email = (form.querySelector('input[name="email"]')) ? form.querySelector('input[name="email"]').value : null;
     var telephone = (form.querySelector('input[name="telephone"]')) ? form.querySelector('input[name="telephone"]').value : null;
@@ -157,13 +160,15 @@
       telephone = '+1' + telephone
     }
 
-    if (telephone) {
+    if (telephone && telephone != "") {
       votesData.push('telephone=' + encodeURIComponent(telephone));
       form.querySelector('input[name="telephone"]').value = telephone;
-    } else if (email) {
+    } else if (email && email != "") {
       votesData.push('email=' + encodeURIComponent(email));
     } else {
       console.error('Couldn’t find an email or phone to add to the data');
+      e.preventDefault();
+      return;
     }
 
     console.dir(votesData);
@@ -224,6 +229,8 @@
       }
 
     });
+
+    e.preventDefault();
   }
 
   function signInSocial(socialNetwork) {
@@ -301,10 +308,7 @@
         } else if (emailShowing || phoneShowing) {
           console.log('form submit');
           cancelScrollToElement();
-          if (window.auth0 && window.auth0.WebAuth) {
-            sendEmail(e.target);
-            e.preventDefault();
-          }
+          sendEmail(e);
         } else if (!finishSeen) {
           finish.classList.remove('hidden')
           finishShowing = true
@@ -579,6 +583,14 @@
         }, 1000)
         e.preventDefault();
         phoneShowing = true
+
+        document.querySelector('input[name="telephone"]').setAttribute('required', 'required')
+
+        document.querySelector('input[name="email"]').removeAttribute('required')
+        document.querySelector('input[name="email"]').value = ""
+        if (signInEmail) signInEmail.classList.add('hidden')
+        emailShowing = false
+
       })
     }
   }
@@ -596,7 +608,13 @@
         e.preventDefault();
         emailShowing = true
 
+        document.querySelector('input[name="email"]').setAttribute('required', 'required')
+
+        document.querySelector('input[name="telephone"]').removeAttribute('required')
         document.querySelector('input[name="telephone"]').value = ""
+        if (signInPhone) signInPhone.classList.add('hidden')
+        phoneShowing = false
+
       })
     }
   }
