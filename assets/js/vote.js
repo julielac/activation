@@ -149,7 +149,7 @@
       }
     }
 
-    if ((votesData).length < 1) {
+    if (votesData.length < 1) {
       console.error('No items were voted for');
       // TBD: Show an error message to the user?
       e.preventDefault()
@@ -271,7 +271,7 @@
       }
     }
 
-    if ((votesData).length < 1) {
+    if (votesData.length < 1) {
       console.error('No items were voted for');
       return;
     }

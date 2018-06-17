@@ -115,7 +115,7 @@ You may want to visit our [home page](/) instead.
       }
     }
 
-    if ((votesData).length < 1) {
+    if (votesData.length < 1) {
       console.error('No items were voted for');
       return;
     }

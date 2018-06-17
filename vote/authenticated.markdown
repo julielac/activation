@@ -180,6 +180,27 @@ You may want to visit our [home page](/) instead.
     if (saveTimeout) clearTimeout(saveTimeout)
   }
 
+  function voteDataExists() {
+    var email = (form.querySelector('input[name="email"]')) ? 
+      form.querySelector('input[name="email"]').value     : null;
+    var telephone = (form.querySelector('input[name="telephone"]')) ? 
+      form.querySelector('input[name="telephone"]').value : null;
+
+    var fieldNames = ['learn', 'create', 'play', 'connect', 'live'];
+    var votesData = [];
+    var nextField;
+    for (var index = 0; index < fieldNames.length; index++) {
+      nextField = form.querySelector('input[name="' + fieldNames[index] + '"]');
+      if (nextField) {
+        votesData.push(fieldNames[index] + '=' + encodeURIComponent(nextField.value));
+      } else {
+        console.log('skipped: ' + fieldNames[index]);
+      }
+    }
+
+    return (votesData.length > 0 && (email || telephone))
+  }
+
   var saveTimeout
   function refreshTimeout() {
     if (saveTimeout) clearTimeout(saveTimeout)
@@ -190,10 +211,9 @@ You may want to visit our [home page](/) instead.
 
   function authenticate(authResult) {
     webAuth.client.userInfo(authResult.accessToken, function(err, user) {
-      console.log('userInfo')
 
       if (err) {
-        if (window.VOTING_SAVE_ON_ERROR === true) {
+        if (window.VOTING_SAVE_ON_ERROR === true && voteDataExists()) {
           form.querySelector('input[name="auth_error"]').value             = err.error
           form.querySelector('input[name="auth_error_description"]').value = err.errorDescription
 
@@ -232,7 +252,7 @@ You may want to visit our [home page](/) instead.
       if (err) {
         console.log('an error occurred')
 
-        if (window.VOTING_SAVE_ON_ERROR === true) {
+        if (window.VOTING_SAVE_ON_ERROR === true && voteDataExists()) {
           form.querySelector('input[name="auth_error"]').value             = err.error
           form.querySelector('input[name="auth_error_description"]').value = err.errorDescription
 
@@ -260,7 +280,8 @@ You may want to visit our [home page](/) instead.
 </script>
 
 <script>
-  function retrySignIn(e){
+
+  function retrySignIn(e) {
     console.log('retrySignIn form');
 
     var email = (form.querySelector('input[name="email"]')) ? 
@@ -280,7 +301,7 @@ You may want to visit our [home page](/) instead.
       }
     }
 
-    if ((votesData).length < 1) {
+    if (votesData.length < 1) {
       console.error('No items were voted for');
       return;
     }

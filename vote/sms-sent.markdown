@@ -169,7 +169,7 @@ form input[type="text"] {
       }
     }
 
-    if ((votesData).length < 1) {
+    if (votesData.length < 1) {
       console.error('No items were voted for');
       showErrorMessage("Please try voting again.");
       return;
