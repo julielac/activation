@@ -111,8 +111,8 @@
 
 
 
-  function sendEmail(e) {
-    console.log('sendEmail');
+  function signInPhoneEmail(e) {
+    console.log('signInPhoneEmail');
 
     var form = e.target
     if (!form) return
@@ -159,6 +159,7 @@
     if (telephone && telephone.indexOf('+') !== 0) {
       telephone = '+1' + telephone
     }
+    telephone = telephone.replace(/\./g, '').replace(/\-/g, '').replace(/\s/g, '')
 
     if (telephone && telephone != "") {
       votesData.push('telephone=' + encodeURIComponent(telephone));
@@ -308,7 +309,7 @@
         } else if (emailShowing || phoneShowing) {
           console.log('form submit');
           cancelScrollToElement();
-          sendEmail(e);
+          signInPhoneEmail(e);
         } else if (!finishSeen) {
           finish.classList.remove('hidden')
           finishShowing = true
