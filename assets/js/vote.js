@@ -2,9 +2,7 @@
 (function() {
 
   // Do we have the features we need?
-  if (!window.auth0         ||
-      !window.auth0.WebAuth ||
-      !document.body.classList        ||
+  if (!document.body.classList        ||
       !document.body.classList.remove ||
       !document.body.querySelector ||
       !document.body.addEventListener ||
@@ -228,7 +226,6 @@
   }
 
   function signInSocial(socialNetwork) {
-
     var fieldNames = ['learn', 'create', 'play', 'connect', 'live'];
     var votesData = [];
     var nextField;
@@ -288,7 +285,6 @@
     var form = document.querySelector('form[name="vote"]')
     // console.log('form: ' + form)
     form.addEventListener('submit', function(e) {
-      e.preventDefault();
       if (document.querySelectorAll('input[type="radio"]:checked').length >= 1) {
         if (!zipSeen) {
           zip.classList.remove('hidden')
@@ -300,12 +296,19 @@
           }, 1000)
           zipSeen = true
           setUpConfirmButton()
+          e.preventDefault();
         } else if (emailShowing || phoneShowing) {
           console.log('form submit');
-          sendEmail(e.target);
+          if (window.auth0 && window.auth0.WebAuth) {
+            sendEmail(e.target);
+            e.preventDefault();
+          }
         } else if (!finishSeen) {
           finish.classList.remove('hidden')
           finishShowing = true
+          if (window.auth0 && window.auth0.WebAuth) {
+            document.querySelector('.facebook-hidden').classList.remove('facebook-hidden')
+          }
           scrollToElement('finish')
           if (!usingMouse) {
             setTimeout(function() {
@@ -314,6 +317,7 @@
           }
           finishSeen = true
           setUpZipButton()
+          e.preventDefault();
         }
       }
     })
@@ -484,6 +488,9 @@
       if (counter >= 1 && zipShowing && !finishShowing) {
         finish.classList.remove('hidden');
         finishShowing = true;
+        if (window.auth0 && window.auth0.WebAuth) {
+          document.querySelector('.facebook-hidden').classList.remove('facebook-hidden')
+        }
 
         window.addEventListener('scroll', function() {
           //if (isVisible(finish, getOffset(finish).top, window.scrollY)) {
@@ -546,36 +553,50 @@
     e.preventDefault();
   })
 
-  var signInPhone = document.getElementById('sign-in-phone');
-  signInPhone.classList.add('hidden');
-  document.querySelector('button[value="phone"]').addEventListener('click', function(e) {
-    signInPhone.classList.remove('hidden')
-    scrollToElement('sign-in-phone')
-    setTimeout(function() {
-      document.querySelector('input[name="telephone"]').focus()
-    }, 1000)
-    e.preventDefault();
-    phoneShowing = true
-  })
+  var signInPhone = document.getElementById('sign-in-phone')
+  if (signInPhone) {
+    signInPhone.classList.add('hidden')
+    if (document.querySelector('button[value="phone"]')) {
+      document.querySelector('button[value="phone"]').addEventListener('click', function(e) {
+        signInPhone.classList.remove('hidden')
+        scrollToElement('sign-in-phone')
+        setTimeout(function() {
+          document.querySelector('input[name="telephone"]').focus()
+        }, 1000)
+        e.preventDefault();
+        phoneShowing = true
+      })
+    }
+  }
 
   var signInEmail = document.getElementById('sign-in-email')
-  signInEmail.classList.add('hidden');
-  document.querySelector('button[value="email"]').addEventListener('click', function(e) {
-    signInEmail.classList.remove('hidden')
-    signInEmail.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    setTimeout(function() {
-      document.querySelector('input[name="email"]').focus()
-    }, 1000)
-    e.preventDefault();
-    emailShowing = true
+  if (signInEmail) {
+    signInEmail.classList.add('hidden')
+    if (document.querySelector('button[value="email"]')) {
+      document.querySelector('button[value="email"]').addEventListener('click', function(e) {
+        signInEmail.classList.remove('hidden')
+        signInEmail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(function() {
+          document.querySelector('input[name="email"]').focus()
+        }, 1000)
+        e.preventDefault();
+        emailShowing = true
 
-    document.querySelector('input[name="telephone"]').value = ""
-  })
+        document.querySelector('input[name="telephone"]').value = ""
+      })
+    }
+  }
 
-  document.querySelector('button[value="facebook"]').addEventListener('click', function(e) {
-    signInSocial('facebook');
-    e.preventDefault();
-  })
+  if (document.querySelector('button[value="facebook"]')) {
+    document.querySelector('button[value="facebook"]').addEventListener('click', function(e) {
+      if (!window.auth0 || !window.auth0.WebAuth) {
+        return;
+      }
+
+      signInSocial('facebook');
+      e.preventDefault();
+    })
+  }
 
   document.querySelector('.action.links').classList.add('hidden')
   document.querySelector('.action.buttons').classList.remove('hidden')

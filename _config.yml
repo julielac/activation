@@ -125,12 +125,18 @@ auth0_js_url: https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js
 auth0_domain: activation-la2050.auth0.com
 auth0_client_id: INfJpr4dnNk2EN143utsZYz4Zeq9c7cd
 
+voting_enable_auth0: true
 
-test_voting_pages: false
+voting_enable_phone: true
+voting_enable_email: true
+voting_enable_facebook: true
+
+voting_maintance_mode: false
+voting_test_mode: false
 
 
 # For cache busting
-version: 1.5.0
+version: 1.5.1
 
 
 permalink: pretty

@@ -6,7 +6,7 @@ stylesheets:
   - "/assets/css/vote.css"
 ---
 
-{% if site.phase < 6 and site.test_voting_pages != true %}
+{% if site.phase < 6 and site.voting_test_mode != true %}
 
   <div class="introduction introduction-voting">
     <div>
@@ -18,7 +18,7 @@ stylesheets:
     </div>
   </div>
 
-{% elsif site.phase > 6 and site.test_voting_pages != true %}
+{% elsif site.phase > 6 and site.voting_test_mode != true %}
 
   <div class="introduction introduction-voting">
     <div>
@@ -27,6 +27,18 @@ stylesheets:
       </a>
       <p>Public voting is complete.</p>
       <p class="action"><a href="{{ site.mailing_list_url }}">Get updates</a></p>
+    </div>
+  </div>
+
+{% elsif site.voting_maintance_mode == true %}
+
+  <div class="introduction introduction-voting">
+    <div style="background-color: black; background-color: rgba(126, 217, 224, 0.85);">
+      <a href="/" class="logo">
+        {% include logo.html %}
+      </a>
+      <p>Uh oh! Public voting isn’t available <span style="display: inline-block">at the moment.</span></p>
+      <p><small>We’ll have it working as soon as we can. <span style="display: inline-block">Please try again later.</span></small></p>
     </div>
   </div>
 
@@ -130,15 +142,21 @@ stylesheets:
         </ul>
 
         <ul class="action buttons hidden">
+          {% if site.voting_enable_phone == true %}
           <li>
             <button type="submit" name="sign_in_by" value="phone">Phone</button>
           </li>
+          {% endif %}
+          {% if site.voting_enable_email == true %}
           <li>
             <button type="submit" name="sign_in_by" value="email">Email</button>
           </li>
-          <li>
+          {% endif %}
+          {% if site.voting_enable_facebook == true and site.voting_enable_auth0 == true %}
+          <li class="facebook-hidden">
             <button type="submit" name="sign_in_by" value="facebook">Facebook</button>
           </li>
+          {% endif %}
         </ul>
       </div>
     </section>
@@ -186,20 +204,6 @@ stylesheets:
 
   </form>
 
-  {% comment %}
-  <script>
-  (function() {
-    function getRandomOrder() {
-      return (Math.floor(Math.random() * 10) + 1) - 5
-    }
-
-    for (var index = 0; index < 5; index++) {
-      document.documentElement.style.setProperty('--order-' + index, getRandomOrder());
-    }
-  })();
-  </script>
-  {% endcomment %}
-
   <script>
   (function() {
     if (!document.body.querySelector || !document.body.querySelectorAll) return
@@ -238,12 +242,15 @@ stylesheets:
   })()
   </script>
 
-  <script src="{{ site.auth0_js_url }}"></script>
+  <script async src="/assets/js/vote.js"></script>
+  <script async src="/assets/js/scroll-into-view.js"></script>
+
+  {% if site.voting_enable_auth0 == true %}
+  <script async src="{{ site.auth0_js_url }}"></script>
   <script>
     window.AUTH0_DOMAIN    = '{{ site.auth0_domain }}',
     window.AUTH0_CLIENT_ID = '{{ site.auth0_client_id }}'
   </script>
-  <script async src="/assets/js/vote.js"></script>
-  <script async src="/assets/js/scroll-into-view.js"></script>
+  {% endif %}
 
 {% endif %}

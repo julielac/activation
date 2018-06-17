@@ -3,7 +3,7 @@ title: Vote in the 2018 My LA2050 Activation Challenge
 body_class: blueberry
 ---
 
-{% if site.phase != 6 and site.test_voting_pages != true %}
+{% if site.phase != 6 and site.voting_test_mode != true %}
 
 # Oops!
 
