@@ -39,6 +39,10 @@ You may want to visit our [home page](/) instead.
 <input type="hidden" name="subscribe_email_list" />
 
 <input type="hidden" name="auth_sub" />
+
+<input type="hidden" name="auth_error" />
+<input type="hidden" name="auth_error_description" />
+
 <input type="hidden" name="browser_unique_id" />
 <input type="hidden" name="browser_user_agent" />
 
@@ -53,6 +57,12 @@ You may want to visit our [home page](/) instead.
 </style>
 
 </div>
+
+{% if site.voting_strict_mode == false %}
+<script>
+  window.VOTING_SAVE_ON_ERROR = true
+</script>
+{% endif %}
 
 <script>
   // http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript#answer-901144
@@ -183,7 +193,14 @@ You may want to visit our [home page](/) instead.
       console.log('userInfo')
 
       if (err) {
-        showErrorMessage(err.errorDescription)
+        if (window.VOTING_SAVE_ON_ERROR === true) {
+          form.querySelector('input[name="auth_error"]').value             = err.error
+          form.querySelector('input[name="auth_error_description"]').value = err.errorDescription
+
+          form.submit()
+        } else {
+          showErrorMessage(err.errorDescription)
+        }
 
         console.log('err')
         console.log(err)
@@ -215,7 +232,14 @@ You may want to visit our [home page](/) instead.
       if (err) {
         console.log('an error occurred')
 
-        showErrorMessage(err.errorDescription)
+        if (window.VOTING_SAVE_ON_ERROR === true) {
+          form.querySelector('input[name="auth_error"]').value             = err.error
+          form.querySelector('input[name="auth_error_description"]').value = err.errorDescription
+
+          form.submit()
+        } else {
+          showErrorMessage(err.errorDescription)
+        }
 
         console.log('err')
         console.log(err)

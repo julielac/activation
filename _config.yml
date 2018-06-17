@@ -139,6 +139,7 @@ voting_enable_facebook: true
 voting_maintance_mode: false
 voting_test_mode: false
 
+voting_strict_mode: false
 
 # For cache busting
 version: 1.5.4
