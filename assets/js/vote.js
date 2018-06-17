@@ -16,6 +16,7 @@
 
   var updateProgress
   var scrollToElement
+  var cancelScrollToElement
   var zipShowing = false;
   var finishShowing = false;
   var zipSeen = false;
@@ -299,6 +300,7 @@
           e.preventDefault();
         } else if (emailShowing || phoneShowing) {
           console.log('form submit');
+          cancelScrollToElement();
           if (window.auth0 && window.auth0.WebAuth) {
             sendEmail(e.target);
             e.preventDefault();
@@ -362,6 +364,10 @@
         if (element && element.scrollIntoView) {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+      }
+
+      cancelScrollToElement = function() {
+        if (delayTimeout) clearTimeout(delayTimeout)
       }
 
       function focusField(name) {
