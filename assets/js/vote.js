@@ -309,7 +309,9 @@
           finish.classList.remove('hidden')
           finishShowing = true
           if (window.auth0 && window.auth0.WebAuth) {
-            document.querySelector('.facebook-hidden').classList.remove('facebook-hidden')
+            if (document.querySelector('.facebook')) {
+              document.querySelector('.facebook').classList.remove('facebook-hidden')
+            }
           }
           scrollToElement('finish')
           if (!usingMouse) {
@@ -499,7 +501,9 @@
         finish.classList.remove('hidden');
         finishShowing = true;
         if (window.auth0 && window.auth0.WebAuth) {
-          document.querySelector('.facebook-hidden').classList.remove('facebook-hidden')
+          if (document.querySelector('.facebook')) {
+            document.querySelector('.facebook').classList.remove('facebook-hidden')
+          }
         }
 
         window.addEventListener('scroll', function() {
