@@ -44,26 +44,32 @@
       // }
       // console.log('scrollTo finish done')
 
-      if (!document.querySelector('input[name="zip"]').value ||
-         !document.querySelector('input[name="zip"]').value == "") return
+      if (document.querySelector('input[name="zip"]').value && 
+          document.querySelector('input[name="zip"]').value.length != "") {
       
-      if (phoneShowing) {
-        scrollToElement('sign-in-phone')
-        setTimeout(function() {
-          document.querySelector('input[name="telephone"]').focus()
-        }, 1000)
-      } else if (emailShowing) {
-        scrollToElement('sign-in-email')
-        setTimeout(function() {
-          document.querySelector('input[name="email"]').focus()
-          document.querySelector('input[name="email"]').setAttribute('required', 'required')
-        }, 1000)
-      } else {
-        scrollToElement('finish')
-        if (!usingMouse) {
+        console.log('zip has a value')
+
+        if (phoneShowing) {
+          console.log('scrolling to phone')
+          scrollToElement('sign-in-phone')
           setTimeout(function() {
-            document.querySelector('button[name="sign_in_by"]').focus()
+            document.querySelector('input[name="telephone"]').focus()
           }, 1000)
+        } else if (emailShowing) {
+          console.log('scrolling to email')
+          scrollToElement('sign-in-email')
+          setTimeout(function() {
+            document.querySelector('input[name="email"]').focus()
+            document.querySelector('input[name="email"]').setAttribute('required', 'required')
+          }, 1000)
+        } else {
+          console.log('scrolling to finish')
+          scrollToElement('finish')
+          if (!usingMouse) {
+            setTimeout(function() {
+              document.querySelector('button[name="sign_in_by"]').focus()
+            }, 1000)
+          }
         }
       }
 
