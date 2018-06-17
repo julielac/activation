@@ -177,7 +177,12 @@
       if (telephone.indexOf('+') !== 0) {
         telephone = '+1' + telephone
       }
-      telephone = telephone.replace(/\./g, '').replace(/\-/g, '').replace(/\s/g, '')
+      telephone = telephone
+                    .replace(/\./g, '')
+                    .replace(/\-/g, '')
+                    .replace(/\s/g, '')
+                    .replace(/\(/g, '')
+                    .replace(/\)/g, '')
 
       votesData.push('telephone=' + encodeURIComponent(telephone));
       form.querySelector('input[name="telephone"]').value = telephone;
