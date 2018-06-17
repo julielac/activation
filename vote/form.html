@@ -1,9 +1,10 @@
 ---
 title: Vote in the 2018 My LA2050 Activation Challenge
+canonical_url: /
 body_class: blueberry
-image: https://activation.la2050.org/assets/images/vote/2048-wide/background.jpg
 stylesheets:
   - "/assets/css/vote.css"
+# image: https://activation.la2050.org/assets/images/vote/2048-wide/background.jpg
 ---
 
 {% if site.phase < 6 and site.voting_test_mode != true %}
@@ -126,24 +127,15 @@ stylesheets:
     </section>
     -->
 
-    <section id="finish" class="blueberry">
+    <section id="finish" class="blueberry hidden">
       <div>
         <h2>You’re <em>almost</em> done!</h2>
         <p>Now it’s time to confirm your vote(s) by signing in with one of your accounts.</p>
         <h3>Sign in with…</h3>
 
-        <ul class="action links">
-          <li>
-            <a href="#sign-in-phone">Phone</a>
-          </li>
-          <li>
-            <a href="#sign-in-email">Email</a>
-          </li>
-        </ul>
-
-        <ul class="action buttons hidden">
+        <ul class="action buttons">
           {% if site.voting_enable_phone == true %}
-          <li>
+          <li class="phone-button phone-button-hidden">
             <button type="submit" name="sign_in_by" value="phone">Phone</button>
           </li>
           {% endif %}
@@ -152,8 +144,8 @@ stylesheets:
             <button type="submit" name="sign_in_by" value="email">Email</button>
           </li>
           {% endif %}
-          {% if site.voting_enable_facebook == true and site.voting_enable_auth0 == true %}
-          <li class="facebook facebook-hidden">
+          {% if site.voting_enable_facebook == true %}
+          <li class="facebook-button facebook-button-hidden">
             <button type="submit" name="sign_in_by" value="facebook">Facebook</button>
           </li>
           {% endif %}
@@ -161,7 +153,7 @@ stylesheets:
       </div>
     </section>
 
-    <section id="sign-in-phone" class="strawberry">
+    <section id="sign-in-phone" class="strawberry hidden">
       <div>
         <h2>Sign in with your phone</h2>
         <p>Next we’ll send a text message to your phone number with a verification code.</p>
@@ -178,14 +170,15 @@ stylesheets:
 
     <section id="sign-in-email" class="lime">
       <div>
-        <h2>Sign in with email</h2>
-        <p>Next we’ll send a message to your email address with a link you can press to sign in.</p>
+        <h2 class="email-headline-alternate">Please enter your email address</h2>
+        <h2 class="email-headline email-text-hidden">Sign in with email</h2>
+        <p class="email-text email-text-hidden">Next we’ll send a message to your email address with a link you can press to sign in.</p>
         <p class="field-button banana">
           <label>
             <span class="label-text">Email address</span>
-            <input type="email" name="email" placeholder="Email address" />
+            <input type="email" name="email" placeholder="Email address" required="required" />
           </label>
-          <button type="submit" id="send-email-button">Submit</button>
+          <button type="submit" id="send-email-button">Submit Votes</button>
         </p>
         <!--
         <p><small>We will only use this email address for official emails from LA2050. (No spam, we promise!)</small></p>

@@ -400,11 +400,15 @@
     display: none !important;
   }
 
-  .action.hidden {
+  .facebook-button-hidden {
     display: none !important;
   }
 
-  .facebook-hidden {
+  .phone-button-hidden {
+    display: none !important;
+  }
+
+  .email-text-hidden {
     display: none !important;
   }
 
