@@ -8,8 +8,14 @@ image: https://activation.la2050.org/assets/images/home/2048-wide/collaborates.j
 
 mailing_list_url: https://la2050.us6.list-manage.com/subscribe/post?u=81b6d7b4efb839b992bf7ae72&amp;id=b16f498212
 submission_url: https://activationla2050.smapply.io/prog/challenge_info/
-vote_url: /vote/form/
 # event_url: /event/
+
+# Typeform:
+# vote_url: https://la2050.typeform.com/to/fGLGJB
+
+# Our form:
+vote_url: /vote/form/
+
 
 # New challenge announced: 
 # February 1

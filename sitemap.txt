@@ -2,7 +2,7 @@
 layout: null
 ---
 {% comment %}
-This file create a list of URLs, which can be pasted into the Facebook share debugger:
+This file creates a list of URLs, which can be pasted into the Facebook share debugger:
 https://developers.facebook.com/tools/debug/sharing/
 {% endcomment %}
 
