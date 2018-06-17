@@ -245,8 +245,8 @@ stylesheets:
   })()
   </script>
 
-  <script async src="/assets/js/vote.js"></script>
-  <script async src="/assets/js/scroll-into-view.js"></script>
+  <script async src="/assets/js/vote.js?v={{ site.version }}"></script>
+  <script async src="/assets/js/scroll-into-view.js?v={{ site.version }}"></script>
 
   {% if site.voting_enable_auth0 == true %}
   <script async src="{{ site.auth0_js_url }}"></script>
