@@ -318,7 +318,11 @@
           finishSeen = true
           setUpZipButton()
           e.preventDefault();
+        } else {
+          e.preventDefault();
         }
+      } else {
+        e.preventDefault();
       }
     })
   })();
