@@ -2,6 +2,8 @@
 title: Vote in the 2018 My LA2050 Activation Challenge
 canonical_url: /
 body_class: tangerine
+stylesheets:
+  - "/assets/css/vote-process.css"
 ---
 
 {% if site.phase != 6 and site.voting_test_mode != true %}
@@ -18,7 +20,7 @@ You may want to visit our [home page](/) instead.
 
 <div class="introduction" markdown="1">
 
-<h2 style="max-width: none; text-align: center; font-size: 2.5em;">Please check your email</h2>
+<h1>Please check your email</h1>
 
 <p>We sent a message to your email address with a link you can press to <span style="display: inline-block">confirm your votes.</span></p>
 
@@ -39,12 +41,6 @@ You may want to visit our [home page](/) instead.
 <p class="action"><button type="submit">Resend email</button></p>
 
 </form>
-
-<style>
-.promotion {
-	display: none;
-}
-</style>
 
 </div>
 

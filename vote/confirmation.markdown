@@ -2,6 +2,8 @@
 title: Vote in the 2018 My LA2050 Activation Challenge
 canonical_url: /
 body_class: blueberry
+stylesheets:
+  - "/assets/css/vote-process.css"
 ---
 
 {% if site.phase != 6 and site.voting_test_mode != true %}
@@ -18,7 +20,7 @@ You may want to visit our [home page](/) instead.
 
 <div class="introduction" markdown="1">
 
-<h2 style="max-width: none; text-align: center; font-size: 2.5em;">Thanks for voting!</h2>
+<h1>Thanks for voting!</h1>
 
 Your votes have been received, and will help us choose the winners.
 
@@ -75,34 +77,5 @@ Your votes have been received, and will help us choose the winners.
 
 </div>
 
-<!--
-<p class="action"><a href="{{ site.mailing_list_url }}">Join our mailing list</a></p>
--->
-
-<style>
-.news p,
-.news ul {
-  max-width: none;
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-}
-.news li {
-  margin-left: 0.75em;
-  margin-right: 0.75em;
-}
-.news ul,
-.news li {
-  list-style: none;
-  margin-left: 0;
-  padding-left: 0;
-}
-.promotion {
-	display: none;
-}
-</style>
 
 {% endif %}

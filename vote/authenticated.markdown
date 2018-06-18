@@ -2,6 +2,8 @@
 title: Vote in the 2018 My LA2050 Activation Challenge
 canonical_url: /
 body_class: banana
+stylesheets:
+  - "/assets/css/vote-process.css"
 ---
 
 {% if site.phase != 6 and site.voting_test_mode != true %}
@@ -18,7 +20,7 @@ You may want to visit our [home page](/) instead.
 
 <div class="introduction">
 
-<h2 style="max-width: none; text-align: center; font-size: 2.5em;" id="headline">It’s time to submit your votes</h2>
+<h1 id="headline">It’s time to submit your votes</h1>
 
 <p id="message" style="visibility: hidden">We couldn’t confirm your votes. <a href="{{ site.vote_url }}">Please try again</a>.</p>
 <p><small id="message-details"></small></p>
@@ -49,12 +51,6 @@ You may want to visit our [home page](/) instead.
 <p class="action"><button type="submit">Submit votes</button></p>
 
 </form>
-
-<style>
-.promotion {
-  display: none
-}
-</style>
 
 </div>
 
@@ -191,12 +187,7 @@ You may want to visit our [home page](/) instead.
       message = "This error may happen if your web browser blocks third party cookies."
     }
 
-    var emailPresent = (document.querySelector('input[name="email"]').value &&
-                        document.querySelector('input[name="email"]').value != "")
-    var phonePresent = (document.querySelector('input[name="telephone"]').value &&
-                        document.querySelector('input[name="telephone"]').value != "")
-
-    if (emailPresent || phonePresent) {
+    if (voteDataExists()) {
       document.querySelector("#message a").addEventListener('click', function(e) {
         if (window.retrySignIn) {
           window.retrySignIn(e)

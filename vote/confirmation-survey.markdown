@@ -2,6 +2,8 @@
 title: Vote in the 2018 My LA2050 Activation Challenge
 canonical_url: /
 body_class: blueberry
+stylesheets:
+  - "/assets/css/vote-process.css"
 ---
 
 {% if site.phase != 6 and site.voting_test_mode != true %}
@@ -18,7 +20,7 @@ You may want to visit our [home page](/) instead.
 
 <div class="introduction" markdown="1">
 
-<h2 style="max-width: none; text-align: center; font-size: 2.5em;">Thanks for completing the survey!</h2>
+<h1>Thanks for completing the survey!</h1>
 
 <h2 style="max-width: none; text-align: center; font-size: inherit; color: var(--primary-color); font-weight: 600;">And thank you for voting! <span style="font-weight: normal; color: rgb(41, 41, 41); /* @midnight */">Your votes have been received and will help us choose the winners.</span></h2>
 
