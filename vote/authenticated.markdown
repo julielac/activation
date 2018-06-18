@@ -153,7 +153,7 @@ You may want to visit our [home page](/) instead.
     button.style.visibility = 'hidden'
   }
 
-  function showErrorMessage(err) {
+  function showErrorMessageOrSubmitForm(err) {
     if (voteDataExists() &&
         (window.VOTING_SAVE_ON_ERROR === true || 
          errorHappenedTwice(err) === true || 
@@ -239,7 +239,7 @@ You may want to visit our [home page](/) instead.
   function refreshTimeout() {
     if (saveTimeout) clearTimeout(saveTimeout)
     saveTimeout = setTimeout(function() {
-      showErrorMessage({ errorDescription: 'The sign in process timed out.' })
+      showErrorMessageOrSubmitForm({ errorDescription: 'The sign in process timed out.' })
     }, 5000)
   }
 
@@ -249,7 +249,7 @@ You may want to visit our [home page](/) instead.
       if (err) {
         console.log('an error occurred')
 
-        showErrorMessage(err)
+        showErrorMessageOrSubmitForm(err)
 
         console.log('err')
         console.log(err)
@@ -281,7 +281,7 @@ You may want to visit our [home page](/) instead.
       if (err) {
         console.log('an error occurred')
 
-        showErrorMessage(err)
+        showErrorMessageOrSubmitForm(err)
 
         console.log('err')
         console.log(err)
@@ -297,7 +297,7 @@ You may want to visit our [home page](/) instead.
       }
     })
   } else {
-    showErrorMessage({ errorDescription: 'The sign in process couldn’t start.' })
+    showErrorMessageOrSubmitForm({ errorDescription: 'The sign in process couldn’t start.' })
   }
 </script>
 
@@ -382,7 +382,7 @@ You may want to visit our [home page](/) instead.
     webAuth.passwordlessStart(options, function (err,res) {
       if (err) {
         // Handle error
-        showErrorMessage({ errorDescription: err.errorDescription || err.description })
+        showErrorMessageOrSubmitForm({ errorDescription: err.errorDescription || err.description })
 
         console.log('err');
         console.log(err)

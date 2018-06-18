@@ -33,9 +33,10 @@ We sent a text message to your phone number with a verification code. <span styl
 
 <p style="font-size: 1em">
   <label>
-    <input type="text" pattern="[0-9]*" inputmode="number" placeholder="Verification Code" name="verification_code" required="required" />
-    <button type="submit">Submit</button>
+    <span class="label-text">Verification Code</span>
+    <input type="text" pattern="[0-9]*" inputmode="number" placeholder="Verification Code" name="verification_code" required="required" autofocus="autofocus" />
   </label>
+  <button type="submit">Submit</button>
 </p>
 </form>
 
@@ -68,6 +69,12 @@ form input[type="text"] {
     width: 100%;
     max-width: none;
   }
+}
+
+/* OPTIONAL: Hide redundant label text */
+form .label-text {
+  position: absolute;
+  left: -9999px;
 }
 </style>
 
