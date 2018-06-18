@@ -179,6 +179,8 @@ You may want to visit our [home page](/) instead.
     document.getElementById('headline').textContent      = 'Oops! Something went wrong'
     document.getElementById('message').style.visibility = 'visible'
 
+    // https://auth0.com/docs/cross-origin-authentication#error-codes-and-descriptions
+
     if (message === "`state` does not match.") message = "This error may happen if you switch to a different phone, computer, or web browser during the sign in process."
 
     if (message === "Wrong email or verification code.") message = "This email link has expired."

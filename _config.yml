@@ -127,7 +127,8 @@ winners:
 
 
 auth0_js_url: https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js
-auth0_domain: activation-la2050.auth0.com
+# auth0_domain: activation-la2050.auth0.com
+auth0_domain: auth0-activation.la2050.org
 auth0_client_id: INfJpr4dnNk2EN143utsZYz4Zeq9c7cd
 
 voting_enable_auth0: true
