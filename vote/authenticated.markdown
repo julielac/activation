@@ -202,12 +202,12 @@ You may want to visit our [home page](/) instead.
   }
 
   function errorHappenedTwice(err) {
-    var lastError
+    var lastError = "unknown"
     try {
       lastError = localStorage.getItem('last_error_description')
+      return (lastError === err.errorDescription)
     } catch(e) {}
-    if (!lastError) return "unknown"
-    else return (lastError === err.errorDescription)
+    return lastError
   }
 
   var saveTimeout

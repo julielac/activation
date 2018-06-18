@@ -587,14 +587,14 @@
           document.querySelector('.facebook-button').classList.remove('facebook-button-hidden')
         }
 
-        // window.addEventListener('scroll', function() {
-        //   //if (isVisible(finish, getOffset(finish).top, window.scrollY)) {
-        //   if ((window.scrollY + (window.innerHeight / 2)) >= getOffset(finish).top) {
-        //     progress.classList.add('hidden-button');
-        //   } else {
-        //     progress.classList.remove('hidden-button');
-        //   }
-        // }, { passive: true })
+        window.addEventListener('scroll', function() {
+          //if (isVisible(finish, getOffset(finish).top, window.scrollY)) {
+          if ((window.scrollY + (window.innerHeight / 2)) >= getOffset(finish).top) {
+            progress.classList.add('hidden');
+          } else {
+            progress.classList.remove('hidden');
+          }
+        }, { passive: true })
 
       }
 
