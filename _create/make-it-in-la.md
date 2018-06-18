@@ -1,7 +1,7 @@
 ---
 application_id: '6360018475'
 title: >-
-  Maker Walk: behind-the-scenes look at locally-made brands and factories around
+  Maker Walk: Behind-the-scenes look at locally-made brands and factories around
   LA
 project_description: >-
   We’re expanding Maker Walk around the city—and partnering with Artisanal LA &
