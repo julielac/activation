@@ -28,7 +28,7 @@ Visit [activation.la2050.org](activation.la2050.org) to start the voting process
 ## How many times can I vote?
 </summary>
 
-You can only vote once per goal category, for a total of 5 votes. It is not required that you use all 5 of your votes, but we encourage you to do so! If you'd like to read up about finalists you're less familiar with before your vote, we have all of the [submissions](activation.la2050.org/finalists/) posted and available for you.
+You can only vote once per goal category, for a total of 5 votes. It is not required that you use all 5 of your votes, but we encourage you to do so! If you'd like to read up about finalists you're less familiar with before you vote, we have all of the [finalists' submissions](activation.la2050.org/finalists/) posted and available.
 
 </details>
 
