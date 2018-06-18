@@ -133,7 +133,7 @@ You may want to visit our [home page](/) instead.
       connection: 'email',
       send: 'link',
       email: email,
-      redirectUri: redirectUri,
+      redirectUri: redirectUri
     }, function (err,res) {
       if (err) {
         // Handle error

@@ -201,6 +201,15 @@ You may want to visit our [home page](/) instead.
     return (votesData.length > 0 && (email || telephone))
   }
 
+  function errorHappenedTwice(err) {
+    var lastError
+    try {
+      lastError = localStorage.getItem('last_error_description')
+    } catch(e) {}
+    if (!lastError) return "unknown"
+    else return (lastError === err.errorDescription)
+  }
+
   var saveTimeout
   function refreshTimeout() {
     if (saveTimeout) clearTimeout(saveTimeout)
@@ -213,13 +222,23 @@ You may want to visit our [home page](/) instead.
     webAuth.client.userInfo(authResult.accessToken, function(err, user) {
 
       if (err) {
-        if (window.VOTING_SAVE_ON_ERROR === true && voteDataExists()) {
+        console.log('an error occurred')
+
+        if (voteDataExists() &&
+            (window.VOTING_SAVE_ON_ERROR === true || 
+             errorHappenedTwice(err) === true || 
+             errorHappenedTwice(err) === "unknown") &&
+            (err.errorDescription === "`state` does not match." ||
+             err.errorDescription === "No verifier returned from client." ||
+             err.errorDescription === "Wrong phone number or verification code.")) {
           form.querySelector('input[name="auth_error"]').value             = err.error
           form.querySelector('input[name="auth_error_description"]').value = err.errorDescription
 
+          localStorage.removeItem('last_error_description')
           form.submit()
         } else {
           showErrorMessage(err.errorDescription)
+          localStorage.setItem('last_error_description', err.errorDescription)
         }
 
         console.log('err')
@@ -252,13 +271,21 @@ You may want to visit our [home page](/) instead.
       if (err) {
         console.log('an error occurred')
 
-        if (window.VOTING_SAVE_ON_ERROR === true && voteDataExists()) {
+        if (voteDataExists() &&
+            (window.VOTING_SAVE_ON_ERROR === true || 
+             errorHappenedTwice(err) === true || 
+             errorHappenedTwice(err) === "unknown") &&
+            (err.errorDescription === "`state` does not match." ||
+             err.errorDescription === "No verifier returned from client." ||
+             err.errorDescription === "Wrong phone number or verification code.")) {
           form.querySelector('input[name="auth_error"]').value             = err.error
           form.querySelector('input[name="auth_error_description"]').value = err.errorDescription
 
+          localStorage.removeItem('last_error_description')
           form.submit()
         } else {
           showErrorMessage(err.errorDescription)
+          localStorage.setItem('last_error_description', err.errorDescription)
         }
 
         console.log('err')
@@ -332,7 +359,7 @@ You may want to visit our [home page](/) instead.
     console.log('redirectUri: ' + redirectUri);
 
     var options = {
-      redirectUri: redirectUri,
+      redirectUri: redirectUri
     }
 
     console.log("telephone: " + telephone.replace(/\-/g, '').replace(/\s/g, ''))

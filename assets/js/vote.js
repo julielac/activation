@@ -201,7 +201,7 @@
     console.log('redirectUri: ' + redirectUri);
 
     var options = {
-      redirectUri: redirectUri,
+      redirectUri: redirectUri
     }
 
     if (telephone) {
@@ -291,7 +291,7 @@
     console.log('redirectUri: ' + redirectUri);
 
     var options = {
-      redirectUri: redirectUri,
+      redirectUri: redirectUri
     }
 
     options.connection = socialNetwork
