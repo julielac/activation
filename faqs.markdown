@@ -16,7 +16,7 @@ stylesheets:
 ## How do I vote?
 </summary>
 
-Visit [https://activation.la2050.org](activation.la2050.org) to start the voting process. If you need additonal assistance, check out this [step-by-step guide](https://www.dropbox.com/s/b7mayhskerfm5al/Step-By-Step%20Voting%20Guide.pdf?dl=0) on how to vote. 
+Visit [activation.la2050.org](https://activation.la2050.org) to start the voting process. If you need additonal assistance, check out this [step-by-step guide](https://www.dropbox.com/s/b7mayhskerfm5al/Step-By-Step%20Voting%20Guide.pdf?dl=0) on how to vote. 
 
 </details>
 
