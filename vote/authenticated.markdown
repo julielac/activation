@@ -161,11 +161,19 @@ You may want to visit our [home page](/) instead.
       form.querySelector('input[name="auth_error"]').value             = err.error
       form.querySelector('input[name="auth_error_description"]').value = err.errorDescription
 
-      localStorage.removeItem('last_error_description')
+      try {
+        localStorage.removeItem('last_error_description')
+      } catch(e) {}
+
       form.submit()
+
     } else {
+
       __showErrorMessage(err.errorDescription)
-      localStorage.setItem('last_error_description', err.errorDescription)
+
+      try {
+        localStorage.setItem('last_error_description', err.errorDescription)
+      } catch(e) {}
     }
   }
 
