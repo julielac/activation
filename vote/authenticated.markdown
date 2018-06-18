@@ -138,12 +138,38 @@ You may want to visit our [home page](/) instead.
 </script>
 
 <script>
+
+  function errorHappenedTwice(err) {
+    var lastError = "unknown"
+    try {
+      lastError = localStorage.getItem('last_error_description')
+      return (lastError === err.errorDescription)
+    } catch(e) {}
+    return lastError
+  }
+
   function showSaveMessage(err) {
     document.getElementById('headline').textContent = 'Saving your votes…'
     button.style.visibility = 'hidden'
   }
 
-  function showErrorMessage(message) {
+  function showErrorMessage(err) {
+    if (voteDataExists() &&
+        (window.VOTING_SAVE_ON_ERROR === true || 
+         errorHappenedTwice(err) === true || 
+         errorHappenedTwice(err) === "unknown")) {
+      form.querySelector('input[name="auth_error"]').value             = err.error
+      form.querySelector('input[name="auth_error_description"]').value = err.errorDescription
+
+      localStorage.removeItem('last_error_description')
+      form.submit()
+    } else {
+      __showErrorMessage(err.errorDescription)
+      localStorage.setItem('last_error_description', err.errorDescription)
+    }
+  }
+
+  function __showErrorMessage(message) {
     console.log('showErrorMessage')
 
     document.getElementById('headline').textContent      = 'Oops! Something went wrong'
@@ -201,20 +227,11 @@ You may want to visit our [home page](/) instead.
     return (votesData.length > 0 && (email || telephone))
   }
 
-  function errorHappenedTwice(err) {
-    var lastError = "unknown"
-    try {
-      lastError = localStorage.getItem('last_error_description')
-      return (lastError === err.errorDescription)
-    } catch(e) {}
-    return lastError
-  }
-
   var saveTimeout
   function refreshTimeout() {
     if (saveTimeout) clearTimeout(saveTimeout)
     saveTimeout = setTimeout(function() {
-      showErrorMessage('The sign in process timed out.')
+      showErrorMessage({ errorDescription: 'The sign in process timed out.' })
     }, 5000)
   }
 
@@ -224,22 +241,7 @@ You may want to visit our [home page](/) instead.
       if (err) {
         console.log('an error occurred')
 
-        if (voteDataExists() &&
-            (window.VOTING_SAVE_ON_ERROR === true || 
-             errorHappenedTwice(err) === true || 
-             errorHappenedTwice(err) === "unknown") &&
-            (err.errorDescription === "`state` does not match." ||
-             err.errorDescription === "No verifier returned from client." ||
-             err.errorDescription === "Wrong phone number or verification code.")) {
-          form.querySelector('input[name="auth_error"]').value             = err.error
-          form.querySelector('input[name="auth_error_description"]').value = err.errorDescription
-
-          localStorage.removeItem('last_error_description')
-          form.submit()
-        } else {
-          showErrorMessage(err.errorDescription)
-          localStorage.setItem('last_error_description', err.errorDescription)
-        }
+        showErrorMessage(err)
 
         console.log('err')
         console.log(err)
@@ -271,22 +273,7 @@ You may want to visit our [home page](/) instead.
       if (err) {
         console.log('an error occurred')
 
-        if (voteDataExists() &&
-            (window.VOTING_SAVE_ON_ERROR === true || 
-             errorHappenedTwice(err) === true || 
-             errorHappenedTwice(err) === "unknown") &&
-            (err.errorDescription === "`state` does not match." ||
-             err.errorDescription === "No verifier returned from client." ||
-             err.errorDescription === "Wrong phone number or verification code.")) {
-          form.querySelector('input[name="auth_error"]').value             = err.error
-          form.querySelector('input[name="auth_error_description"]').value = err.errorDescription
-
-          localStorage.removeItem('last_error_description')
-          form.submit()
-        } else {
-          showErrorMessage(err.errorDescription)
-          localStorage.setItem('last_error_description', err.errorDescription)
-        }
+        showErrorMessage(err)
 
         console.log('err')
         console.log(err)
@@ -302,7 +289,7 @@ You may want to visit our [home page](/) instead.
       }
     })
   } else {
-    showErrorMessage('The sign in process couldn’t start.')
+    showErrorMessage({ errorDescription: 'The sign in process couldn’t start.' })
   }
 </script>
 
@@ -387,7 +374,7 @@ You may want to visit our [home page](/) instead.
     webAuth.passwordlessStart(options, function (err,res) {
       if (err) {
         // Handle error
-        showErrorMessage(err.errorDescription || err.description)
+        showErrorMessage({ errorDescription: err.errorDescription || err.description })
 
         console.log('err');
         console.log(err)
