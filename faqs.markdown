@@ -16,7 +16,7 @@ stylesheets:
 ## How do I vote?
 </summary>
 
-Visit [activation.la2050.org](activation.la2050.org) to start the voting process. If you need additonal assistance, check out this [step-by-step guide](https://www.dropbox.com/s/b7mayhskerfm5al/Step-By-Step%20Voting%20Guide.pdf?dl=0) on how to vote. 
+Visit [https://activation.la2050.org](activation.la2050.org) to start the voting process. If you need additonal assistance, check out this [step-by-step guide](https://www.dropbox.com/s/b7mayhskerfm5al/Step-By-Step%20Voting%20Guide.pdf?dl=0) on how to vote. 
 
 </details>
 
@@ -28,7 +28,7 @@ Visit [activation.la2050.org](activation.la2050.org) to start the voting process
 ## How many times can I vote?
 </summary>
 
-You can only vote once per goal category, for a total of 5 votes. It is not required that you use all 5 of your votes, but we encourage you to do so! If you'd like to read up about finalists you're less familiar with before you vote, we have all of the [finalists' submissions](activation.la2050.org/finalists/) posted and available.
+You can only vote once per goal category, for a total of 5 votes. It is not required that you use all 5 of your votes, but we encourage you to do so! If you'd like to read about finalists you're less familiar with before you vote, we have all of the [finalists' submissions](https://activation.la2050.org/finalists/) posted and available.
 
 </details>
 
@@ -40,7 +40,7 @@ You can only vote once per goal category, for a total of 5 votes. It is not requ
 ## Why do I need to sign in with phone, email, or Facebook in order to vote?
 </summary>
 
-The short answer: we want to make sure you’re not a bot. We’re asking for this information for authentication purposes and to ensure that we are not receive multiple voting forms from one individual.
+The short answer: we want to make sure you’re not a bot. We’re asking for this information for authentication purposes and to ensure that we are not receiving multiple voting forms from one individual.
 
 </details>
 
@@ -76,7 +76,7 @@ If you entered your email address correctly, but don’t see a confirmation mess
 ## I clicked on the link sent to my email (or entered the code sent to my phone) and received an error message. What should I do?
 </summary>
 
-It’s possible that the link or code has expired. If this is the case, you should be able to resend the code or email in order to confirm your votes. You also may have encountered this error message because you switched devices. It’s important that you complete the voting process on the same device that you started it on. Go back to your original device and try again!
+It’s possible that the link or code has expired. If this is the case, you should be able to resend the code or email in order to confirm your votes. You also may have encountered this error message because you switched devices. It’s important that you complete the voting process on the same device that you started it on. Go back to your original device, and try again!
 
 </details>
 
