@@ -35,6 +35,8 @@ You can only vote once per goal category, for a total of 5 votes. It is not requ
 
 
 <details class="faq" markdown="1">
+
+<summary markdown="1">
 ## Why do I need to sign in with phone, email, or Facebook in order to vote?
 </summary>
 
