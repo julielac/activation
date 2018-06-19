@@ -64,7 +64,7 @@ We definitely won’t spam you. We will only contact you if you opt-in to our LA
 ## I signed in with my email address, but haven't received an email yet. What's going on?
 </summary>
 
-If you entered your email address correctly, but don’t see a confirmation message, please check your spam folder. If you still don’t see it after several minutes, either contact us at connect@la2050.org or try using another method to confirm your votes (e.g., phone or email).
+If you entered your email address correctly, but don’t see a confirmation message, please check your spam folder. If you still don’t see it after several minutes, either contact us at [connect@la2050.org](mailto:connect@la2050.org) or try using another method to confirm your votes (e.g., phone or email).
 
 </details>
 

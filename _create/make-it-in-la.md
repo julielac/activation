@@ -11,7 +11,7 @@ organization_name: MAKE IT IN LA
 organization_description: Non-profit organization
 project_video: 'https://www.youtube.com/watch?v=x2Ty5rjHVyE'
 organization_website:
-  - 'http://makeitinla.org'
+  - 'http://makerwalk.com'
   - 'http://lafoodfest.com'
   - 'http://artisanalla.com'
 organization_twitter:
@@ -26,7 +26,7 @@ organization_instagram:
   - '@wemakeitinla'
   - '@lafoodfest'
   - '@artisanalla'
-link_newsletter: 'http://makeitinla.org/activateforla'
+link_newsletter: 'https://makeitinla.org/makerwalk/'
 link_volunteer: ''
 link_donate: ''
 organization_activity: >-
