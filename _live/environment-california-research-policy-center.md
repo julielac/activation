@@ -1,6 +1,6 @@
 ---
 application_id: '4553021440'
-title: '#NextStopCleanAir: Electric School Buses for LA''s Kids'
+title: '#NextStopCleanAir: Electric School Buses for LA’s Kids'
 project_description: >-
   Worried about the smog affecting our kids’ health? Join students, parents,
   teachers, and the community to put 100 percent clean, electric buses on school
