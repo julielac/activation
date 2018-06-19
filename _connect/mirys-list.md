@@ -5,7 +5,7 @@ project_description: >-
   "Welcome, Neighbor" is a campaign to activate Angelenos across the city
   through their Neighborhood Councils to welcome and support their newest
   neighbors, refugee families resettling in Los Angeles.
-organization_name: Miry's List
+organization_name: Miry’s List
 organization_description: Non-profit organization
 project_video: 'https://youtu.be/6re3u9HlO-A'
 link_newsletter: www.miryslist.org/welcomeneighbor
