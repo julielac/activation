@@ -1,6 +1,6 @@
 ---
 application_id: '849544484'
-title: 'Seed to Sky: building an economic bridge from LA''s community gardens to LAX'
+title: 'Seed to Sky: building an economic bridge from LA’s community gardens to LAX'
 project_description: >-
   We are building a coalition to enhance the role of gardens in communities -
   not only as a training ground for access and education, but as an economic
